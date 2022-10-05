@@ -1,6 +1,7 @@
 let customerDetails = [];
 
 /** SWEAT ALERTS */
+
 /* sweat alert for saved successfully */
 function savedSuccessfully() {
     const Toast = Swal.mixin({
@@ -127,37 +128,47 @@ $("#srcCustomerId").on('keydown', function (e) {
     }
 });
 
-$('#cusIdTxt').on('keyup',function (e){
-    if (/^(C-)[0-9]{2,4}$/.test($('#cusIdTxt').val())){
+$('#cusIdTxt').on('keyup', function (e) {
+    if (/^(C-)[0-9]{2,4}$/.test($('#cusIdTxt').val())) {
+
         $('#cusIdTxt').css('border', '3px solid green')
         $('#customerIdLbl').text('')
+
         if (e.key === "Enter") {
             $('#cusNameTxt').focus()
         }
-    }else {
+
+    } else {
+
         $('#cusIdTxt').css('border', '3px solid red');
         $('#customerIdLbl').text("Your input can't be validated, Ex - C-001  ")
+
     }
 })
 
-$('#cusNameTxt').on('keyup',function (e){
-    if (/^[A-z ]{3,20}$/.test($('#cusNameTxt').val())){
+$('#cusNameTxt').on('keyup', function (e) {
+    if (/^[A-z ]{3,20}$/.test($('#cusNameTxt').val())) {
+        $('#cusNameTxt').css('border', '3px solid green')
+        $('#customerNameLbl').text('')
         if (e.key === "Enter") {
             $('#cusAddressTxt').focus()
         }
+    } else {
+        $('#cusNameTxt').css('border', '3px solid red');
+        $('#customerNameLbl').text("Your input can't be validated, Ex - Mahesh  ")
     }
 })
 
-$('#cusAddressTxt').on('keyup',function (e){
-    if (/^[A-z ]{4,20}$/.test($('#cusAddressTxt').val())){
+$('#cusAddressTxt').on('keyup', function (e) {
+    if (/^[A-z ]{4,20}$/.test($('#cusAddressTxt').val())) {
         if (e.key === "Enter") {
             $('#cusContactTxt').focus()
         }
     }
 })
 
-$('#cusContactTxt').on('keyup',function (e){
-    if (/^([0-9]{10})$/.test($('#cusContactTxt').val())){
+$('#cusContactTxt').on('keyup', function (e) {
+    if (/^([0-9]{10})$/.test($('#cusContactTxt').val())) {
         if (e.key === "Enter") {
             saveCustomer()
             $('#cusIdTxt').focus()

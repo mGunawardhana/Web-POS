@@ -1,6 +1,7 @@
 let itemDetails = [];
 
 /** SWEAT ALERTS */
+
 /* sweat alert for saved successfully */
 function savedSuccessfully() {
     const Toast = Swal.mixin({
@@ -129,13 +130,13 @@ $("#srcItemID").on('keyup', function (e) {
 /* reg-x for item id text */
 $('#itemIdTxt').on('keyup', function (e) {
 
-    if (/^I-[0-9]{2,5}$/.test($('#itemIdTxt').val())){
+    if (/^I-[0-9]{2,5}$/.test($('#itemIdTxt').val())) {
         $('#itemIdTxt').css('border', '3px solid green')
         $('#itemIdTxtLbl').text('')
         if (e.key === "Enter") {
             $('#ItemNameTxt').focus()
         }
-    }else{
+    } else {
         $('#itemIdTxt').css('border', '3px solid red');
         $('#itemIdTxtLbl').text("Your input can't be validated, Ex - I-001  ")
 
@@ -144,14 +145,13 @@ $('#itemIdTxt').on('keyup', function (e) {
 
 /* reg-x for item name text */
 $('#ItemNameTxt').on('keyup', function (e) {
-    if (/^[A-z]{2,10}$/.test($('#ItemNameTxt').val())){
+    if (/^[A-z]{2,10}$/.test($('#ItemNameTxt').val())) {
         $('#ItemNameTxt').css('border', '3px solid green')
         $('#itemNameTxtLbl').text('')
         if (e.key === "Enter") {
             $('#itemQtyTxt').focus()
         }
-    }
-    else {
+    } else {
         $('#ItemNameTxt').css('border', '3px solid red');
         $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Burger  ")
     }
@@ -159,7 +159,7 @@ $('#ItemNameTxt').on('keyup', function (e) {
 
 /* reg-x for item qty text */
 $('#itemQtyTxt').on('keyup', function (e) {
-    if (/^[1-9]{1,4}$/.test($('#itemQtyTxt').val())){
+    if (/^[1-9]{1,4}$/.test($('#itemQtyTxt').val())) {
         $('#itemQtyTxt').css('border', '3px solid green')
         $('#itemQtyTxtLbl').text('')
         if (e.key === "Enter") {
@@ -173,7 +173,7 @@ $('#itemQtyTxt').on('keyup', function (e) {
 
 /* reg-x for item unit price text */
 $('#unitPriceTxt').on('keyup', function (e) {
-    if(/^([0-9]{2,6}.[0-9]{1,2})$/.test($('#unitPriceTxt').val())){
+    if (/^([0-9]{2,6}.[0-9]{1,2})$/.test($('#unitPriceTxt').val())) {
         $('#unitPriceTxt').css('border', '3px solid green')
         $('#itemUnitPriceTxtLbl').text('')
         if (e.key === "Enter") {
