@@ -47,7 +47,7 @@ function searchResultNotFound() {
 
 /* clear customer details */
 function clearCustomerTextFields() {
-    $('#cusID,#cusName,#cusAddress,#cusContact').val('');
+    $('#cusIdTxt,#cusNameTxt,#cusAddressTxt,#cusContactTxt').val('');
 }
 
 /* load all Customer to table */
@@ -62,34 +62,10 @@ function loadAllCustomer() {
 }
 
 /* disabling tab */
-$('#cusName,#cusAddress,#cusContact,#cusID').on('keydown', function (e) {
+$('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt').on('keydown', function (e) {
     if (e.key === "Tab") {
         e.preventDefault()
     }
-})
-
-/* shift next text field */
-$('#cusID').on('keydown', function (e) {
-    if (e.key === "Enter") {
-        $('#cusName').focus()
-    }
-})
-$('#cusName').on('keydown', function (e) {
-    if (e.key === "Enter") {
-        $('#cusAddress').focus()
-    }
-})
-$('#cusAddress').on('keydown', function (e) {
-    if (e.key === "Enter") {
-        $('#cusContact').focus()
-    }
-})
-$('#cusContact').on('keydown', function (e) {
-    if (e.key === "Enter") {
-        saveCustomer()
-        $('#cusID').focus()
-    }
-
 })
 
 /* save customer option */
@@ -98,10 +74,10 @@ function saveCustomer() {
 
     /* packing customer details into customerObject */
     let customerObject = {
-        id: $('#cusID').val(),
-        name: $('#cusName').val(),
-        address: $('#cusAddress').val(),
-        contact: $('#cusContact').val()
+        id: $('#cusIdTxt').val(),
+        name: $('#cusNameTxt').val(),
+        address: $('#cusAddressTxt').val(),
+        contact: $('#cusContactTxt').val()
     }
 
     console.log(customerObject.toString())
@@ -140,10 +116,10 @@ $("#srcCustomerId").on('keydown', function (e) {
 
     if (key === 13) {
         if (response) {
-            $("#cusID").val(response.id);
-            $("#cusName").val(response.name);
-            $("#cusAddress").val(response.address);
-            $('#cusContact').val(response.contact);
+            $("#cusIdTxt").val(response.id);
+            $("#cusNameTxt").val(response.name);
+            $("#cusAddressTxt").val(response.address);
+            $('#cusContactTxt').val(response.contact);
         } else {
             clearCustomerTextFields();
             searchResultNotFound();
@@ -151,13 +127,41 @@ $("#srcCustomerId").on('keydown', function (e) {
     }
 });
 
-let validatorPatternCustomerId = /^(C-)[0-9]{1,2}$/;
-let validatorPatternCustomerName = /^[A-z ]{3,20}$/;
-let validatorPatternCustomerAddress = /^[A-z ]{4,20}$/;
-let validatorPatternCustomerContact = /^([0-9]{10})$/;
+$('#cusIdTxt').on('keyup',function (e){
+    if (/^(C-)[0-9]{2,4}$/.test($('#cusIdTxt').val())){
+        $('#cusIdTxt').css('border', '3px solid green')
+        $('#customerIdLbl').text('')
+        if (e.key === "Enter") {
+            $('#cusNameTxt').focus()
+        }
+    }else {
+        $('#cusIdTxt').css('border', '3px solid red');
+        $('#customerIdLbl').text("Your input can't be validated, Ex - C-001  ")
+    }
+})
 
+$('#cusNameTxt').on('keyup',function (e){
+    if (/^[A-z ]{3,20}$/.test($('#cusNameTxt').val())){
+        if (e.key === "Enter") {
+            $('#cusAddressTxt').focus()
+        }
+    }
+})
 
+$('#cusAddressTxt').on('keyup',function (e){
+    if (/^[A-z ]{4,20}$/.test($('#cusAddressTxt').val())){
+        if (e.key === "Enter") {
+            $('#cusContactTxt').focus()
+        }
+    }
+})
 
-
-
+$('#cusContactTxt').on('keyup',function (e){
+    if (/^([0-9]{10})$/.test($('#cusContactTxt').val())){
+        if (e.key === "Enter") {
+            saveCustomer()
+            $('#cusIdTxt').focus()
+        }
+    }
+})
 

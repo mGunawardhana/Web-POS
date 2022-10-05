@@ -89,40 +89,54 @@
                 <!-- adding buttons for customer managements -->
 
                 <!-- add button -->
-                <button id="addCustomerBtn" class="btn" style="background-color: #2ed573; color: black;font-weight: bold;border: 3px solid white" type="button">Add Customer</button>
+                <button class="btn" id="addCustomerBtn"
+                        style="background-color: #2ed573; color: black;font-weight: bold;border: 3px solid white"
+                        type="button">Add Customer
+                </button>
                 <!-- update button -->
-                <button id="updateCustomerBtn" class="btn" style="background-color: #eccc68; color: black;font-weight: bold;border: 3px solid white"  type="button">Update Customer</button>
+                <button class="btn" id="updateCustomerBtn"
+                        style="background-color: #eccc68; color: black;font-weight: bold;border: 3px solid white"
+                        type="button">Update Customer
+                </button>
                 <!-- delete button -->
-                <button id="deleteCustomerBtn" class="btn btn-danger" style="background-color: #ff4757; color: black;font-weight: bold;border: 3px solid white" type="button">Delete Customer</button>
+                <button class="btn btn-danger" id="deleteCustomerBtn"
+                        style="background-color: #ff4757; color: black;font-weight: bold;border: 3px solid white"
+                        type="button">Delete Customer
+                </button>
 
             </div>
         </div>
 
         <!-- customer details form -->
-        <div class="col-12 col-md-5 mt-3" style="border-radius: 10px; background-color: #EFEFEF;border: 3px solid black">
+        <div class="col-12 col-md-5 mt-3"
+             style="border-radius: 10px; background-color: #EFEFEF;border: 3px solid black">
 
             <!-- customer ID set up -->
             <div class="mb-3">
-                <label class="form-label" for="cusID" style="font-weight: bolder">Customer ID</label>
-                <input class="form-control " id="cusID" placeholder="Customer ID" type="text">
+                <label class="form-label" for="cusIdTxt" style="font-weight: bolder">Customer ID</label>
+                <input class="form-control " id="cusIdTxt" placeholder="Customer ID" type="text">
+                <p><small class="text-danger fw-bold" id="customerIdLbl"></small></p>
             </div>
 
             <!-- customer Name set up -->
             <div class="mb-3">
-                <label class="form-label" for="cusName" style="font-weight: bolder">Customer Name</label>
-                <input class="form-control" id="cusName" placeholder="Customer Name" type="text">
+                <label class="form-label" for="cusNameTxt" style="font-weight: bolder">Customer Name</label>
+                <input class="form-control" id="cusNameTxt" placeholder="Customer Name" type="text">
+                <p><small class="text-danger fw-bold" id="customerNameLbl"></small></p>
             </div>
 
             <!-- customer Address set up -->
             <div class="mb-3">
-                <label class="form-label" for="cusAddress" style="font-weight: bolder">Customer Address</label>
-                <input class="form-control" id="cusAddress" placeholder="Customer Address" type="text">
+                <label class="form-label" for="cusAddressTxt" style="font-weight: bolder">Customer Address</label>
+                <input class="form-control" id="cusAddressTxt" placeholder="Customer Address" type="text">
+                <p><small class="text-danger fw-bold" id="customerAddressLbl"></small></p>
             </div>
 
             <!-- customer Salary set up -->
             <div class="mb-3">
-                <label class="form-label" for="cusContact" style="font-weight: bolder">Contact</label>
-                <input class="form-control" id="cusContact" placeholder="Customer Tp" type="text">
+                <label class="form-label" for="cusContactTxt" style="font-weight: bolder">Contact</label>
+                <input class="form-control" id="cusContactTxt" placeholder="Customer Tp" type="text">
+                <p><small class="text-danger fw-bold" id="CustomerContactLbl"></small></p>
             </div>
         </div>
 
@@ -158,6 +172,7 @@
 </section>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script src="assets/swal-lib/package/dist/sweetalert2.all.min.js">
-</script><script src="assets/js/js%20for%20pos/customer.js"></script>
+</script>
+<script src="assets/js/js%20for%20pos/customer.js"></script>
 </body>
 </html>

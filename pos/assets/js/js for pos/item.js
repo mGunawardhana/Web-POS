@@ -73,6 +73,59 @@ $('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt').on('keydown', function (e
     }
 })
 
+/* save item details */
+function saveItem() {
+
+    /* packing item details into itemObject */
+    let itemObject = {
+        id: $("#itemIdTxt").val(),
+        name: $("#ItemNameTxt").val(),
+        qty: $("#itemQtyTxt").val(),
+        unitPrice: $('#unitPriceTxt').val()
+    }
+
+    clearItemTextFields()
+
+    /* itemObjects adding into itemDetails main Array */
+    itemDetails.push(itemObject);
+
+    loadAllItems()
+
+    /* saved notification */
+    savedSuccessfully();
+}
+
+/* adding item details to array */
+$("#addItemBtn").on('click', function () {
+    saveItem()
+});
+
+/* search item */
+function searchByItemID(id) {
+    for (let i = 0; i < itemDetails.length; i++) {
+        if (itemDetails[i].id === id) {
+            return itemDetails[i];
+        }
+    }
+}
+
+/* search by pressing enter option in item form */
+$("#srcItemID").on('keyup', function (e) {
+    let response = searchByItemID($("#srcItemID").val());
+    let key = e.which;
+    if (key === 13) {
+        if (response) {
+            $("#itemIdTxt").val(response.id);
+            $("#ItemNameTxt").val(response.name);
+            $("#itemQtyTxt").val(response.qty);
+            $('#unitPriceTxt').val(response.unitPrice);
+        } else {
+            clearItemTextFields();
+            searchResultNotFound();
+        }
+    }
+});
+
 /* reg-x for item id text */
 $('#itemIdTxt').on('keyup', function (e) {
 
@@ -132,62 +185,6 @@ $('#unitPriceTxt').on('keyup', function (e) {
         $('#itemUnitPriceTxtLbl').text("Your input can't be validated, Ex - 120.99  ")
     }
 })
-
-
-/* save item details */
-function saveItem() {
-
-    /* packing item details into itemObject */
-    let itemObject = {
-        id: $("#itemIdTxt").val(),
-        name: $("#ItemNameTxt").val(),
-        qty: $("#itemQtyTxt").val(),
-        unitPrice: $('#unitPriceTxt').val()
-    }
-
-    clearItemTextFields()
-
-    /* itemObjects adding into itemDetails main Array */
-    itemDetails.push(itemObject);
-
-    loadAllItems()
-
-    /* saved notification */
-    savedSuccessfully();
-}
-
-/* adding item details to array */
-$("#addItemBtn").on('click', function () {
-    saveItem()
-});
-
-/* search item */
-function searchByItemID(id) {
-    for (let i = 0; i < itemDetails.length; i++) {
-        if (itemDetails[i].id === id) {
-            return itemDetails[i];
-        }
-    }
-}
-
-/* search by pressing enter option in item form */
-$("#srcItemID").on('keyup', function (e) {
-    let response = searchByItemID($("#srcItemID").val());
-    let key = e.which;
-    if (key === 13) {
-        if (response) {
-            $("#itemIdTxt").val(response.id);
-            $("#ItemNameTxt").val(response.name);
-            $("#itemQtyTxt").val(response.qty);
-            $('#unitPriceTxt').val(response.unitPrice);
-        } else {
-            clearItemTextFields();
-            searchResultNotFound();
-        }
-    }
-});
-
-
 
 
 
