@@ -128,6 +128,7 @@ $("#srcCustomerId").on('keydown', function (e) {
     }
 });
 
+/* reg-x for customer id text */
 $('#cusIdTxt').on('keyup', function (e) {
     if (/^(C-)[0-9]{2,4}$/.test($('#cusIdTxt').val())) {
 
@@ -146,33 +147,57 @@ $('#cusIdTxt').on('keyup', function (e) {
     }
 })
 
+/* reg-x for customer name text */
 $('#cusNameTxt').on('keyup', function (e) {
     if (/^[A-z ]{3,20}$/.test($('#cusNameTxt').val())) {
+
         $('#cusNameTxt').css('border', '3px solid green')
         $('#customerNameLbl').text('')
+
         if (e.key === "Enter") {
             $('#cusAddressTxt').focus()
         }
+
     } else {
+
         $('#cusNameTxt').css('border', '3px solid red');
         $('#customerNameLbl').text("Your input can't be validated, Ex - Mahesh  ")
     }
 })
 
+/* reg-x for customer address text */
 $('#cusAddressTxt').on('keyup', function (e) {
     if (/^[A-z ]{4,20}$/.test($('#cusAddressTxt').val())) {
+
+        $('#cusAddressTxt').css('border', '3px solid green')
+        $('#customerAddressLbl').text('')
+
         if (e.key === "Enter") {
             $('#cusContactTxt').focus()
         }
+
+    } else {
+
+        $('#cusAddressTxt').css('border', '3px solid red');
+        $('#customerAddressLbl').text("Your input can't be validated, Ex - Galle ")
     }
 })
 
+/* reg-x for customer contact text */
 $('#cusContactTxt').on('keyup', function (e) {
     if (/^([0-9]{10})$/.test($('#cusContactTxt').val())) {
+
+        $('#cusContactTxt').css('border', '3px solid green')
+        $('#CustomerContactLbl').text('')
+
         if (e.key === "Enter") {
             saveCustomer()
             $('#cusIdTxt').focus()
         }
+    } else {
+
+        $('#cusContactTxt').css('border', '3px solid red');
+        $('#CustomerContactLbl').text("Your input can't be validated, Ex - 0719028827 ")
     }
 })
 
