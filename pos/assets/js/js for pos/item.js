@@ -43,26 +43,6 @@ function searchResultNotFound() {
     })
 }
 
-function invalidDataInputFormat(){
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        background: '#ff4757',
-        color: '#ffffff',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
-    Toast.fire({
-        icon: 'error',
-        title: " invalid data type please check and re enter !"
-    })
-}
-
 /** ITEM PAGE OPTIONS - */
 
 /* clear item details */
@@ -110,12 +90,11 @@ $('#itemIdTxt').on('keyup', function (e) {
         }
     }else{
         $('#itemIdTxt').css('border', '3px solid red');
-        // $('#itemIdTxtLbl').text("Your input can't be validated, Ex - C001  ")
-        invalidDataInputFormat()
+        $('#itemIdTxtLbl').text("Your input can't be validated, Ex - I-001  ")
+
     }
 })
 $('#ItemNameTxt').on('keyup', function (e) {
-
     if (validatorPatternItemName.test($('#ItemNameTxt').val())){
         $('#ItemNameTxt').css('border', '3px solid green')
         $('#itemNameTxtLbl').text('')
@@ -125,17 +104,23 @@ $('#ItemNameTxt').on('keyup', function (e) {
     }
     else {
         $('#ItemNameTxt').css('border', '3px solid red');
-        // $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
-        invalidDataInputFormat()
+        $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
     }
-
-
 })
+
 $('#itemQtyTxt').on('keydown', function (e) {
-    if (e.key === "Enter") {
-        $('#unitPriceTxt').focus()
+    if (validatorPatternItemName.test($('#itemQtyTxt').val())){
+        $('#itemQtyTxt').css('border', '3px solid green')
+        $('#itemQtyTxtLbl').text('')
+        if (e.key === "Enter") {
+            $('#unitPriceTxt').focus()
+        }
+    } else {
+        $('#itemQtyTxt').css('border', '3px solid red');
+        $('#itemQtyTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
     }
 })
+
 $('#unitPriceTxt').on('keydown', function (e) {
     if (e.key === "Enter") {
         saveItem()
