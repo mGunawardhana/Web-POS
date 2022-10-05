@@ -46,11 +46,11 @@ function searchResultNotFound() {
 function invalidDataInputFormat(){
     const Toast = Swal.mixin({
         toast: true,
-        position: 'bottom-end',
+        position: 'top-end',
         background: '#ff4757',
         color: '#ffffff',
         showConfirmButton: false,
-        timer: 3000,
+        timer: 2000,
         timerProgressBar: true,
         didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -94,10 +94,10 @@ $('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt').on('keydown', function (e
 })
 
 
-let validatorPatternItemCode = /^C001$/;
-let validatorPatternItemName = /^Jack Daniel$/;
-let validatorPatternItemPrice = /^$/;
-let validatorPatternItemQty = /^$/;
+let validatorPatternItemCode = /^I-[0-9]{2,5}$/;
+let validatorPatternItemName = /^[A-z]{2,10}$/;
+let validatorPatternItemPrice = /^([0-9]{2,6}.[0-9]{1,2})$/;
+let validatorPatternItemQty = /^[0-9]{1,4}$/;
 
 /* ----------- shift next text field ----------- */
 $('#itemIdTxt').on('keyup', function (e) {
@@ -110,7 +110,8 @@ $('#itemIdTxt').on('keyup', function (e) {
         }
     }else{
         $('#itemIdTxt').css('border', '3px solid red');
-        $('#itemIdTxtLbl').text("Your input can't be validated, Ex - C001  ")
+        // $('#itemIdTxtLbl').text("Your input can't be validated, Ex - C001  ")
+        invalidDataInputFormat()
     }
 })
 $('#ItemNameTxt').on('keyup', function (e) {
@@ -124,7 +125,8 @@ $('#ItemNameTxt').on('keyup', function (e) {
     }
     else {
         $('#ItemNameTxt').css('border', '3px solid red');
-        $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
+        // $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
+        invalidDataInputFormat()
     }
 
 

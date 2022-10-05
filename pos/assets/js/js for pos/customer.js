@@ -151,6 +151,10 @@ $("#srcCustomerId").on('keydown', function (e) {
     }
 });
 
+let validatorPatternCustomerId = /^(C-)[0-9]{1,2}$/;
+let validatorPatternCustomerName = /^[A-z ]{3,20}$/;
+let validatorPatternCustomerAddress = /^[A-z ]{4,20}$/;
+let validatorPatternCustomerContact = /^([0-9]{10})$/;
 
 
 
