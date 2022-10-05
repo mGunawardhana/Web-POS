@@ -73,16 +73,10 @@ $('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt').on('keydown', function (e
     }
 })
 
-
-let validatorPatternItemCode = /^I-[0-9]{2,5}$/;
-let validatorPatternItemName = /^[A-z]{2,10}$/;
-let validatorPatternItemPrice = /^([0-9]{2,6}.[0-9]{1,2})$/;
-let validatorPatternItemQty = /^[0-9]{1,4}$/;
-
-/* ----------- shift next text field ----------- */
+/* reg-x for item id text */
 $('#itemIdTxt').on('keyup', function (e) {
 
-    if (validatorPatternItemCode.test($('#itemIdTxt').val())){
+    if (/^I-[0-9]{2,5}$/.test($('#itemIdTxt').val())){
         $('#itemIdTxt').css('border', '3px solid green')
         $('#itemIdTxtLbl').text('')
         if (e.key === "Enter") {
@@ -94,8 +88,10 @@ $('#itemIdTxt').on('keyup', function (e) {
 
     }
 })
+
+/* reg-x for item name text */
 $('#ItemNameTxt').on('keyup', function (e) {
-    if (validatorPatternItemName.test($('#ItemNameTxt').val())){
+    if (/^[A-z]{2,10}$/.test($('#ItemNameTxt').val())){
         $('#ItemNameTxt').css('border', '3px solid green')
         $('#itemNameTxtLbl').text('')
         if (e.key === "Enter") {
@@ -104,12 +100,13 @@ $('#ItemNameTxt').on('keyup', function (e) {
     }
     else {
         $('#ItemNameTxt').css('border', '3px solid red');
-        $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
+        $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Burger  ")
     }
 })
 
-$('#itemQtyTxt').on('keydown', function (e) {
-    if (validatorPatternItemName.test($('#itemQtyTxt').val())){
+/* reg-x for item qty text */
+$('#itemQtyTxt').on('keyup', function (e) {
+    if (/^[1-9]{1,4}$/.test($('#itemQtyTxt').val())){
         $('#itemQtyTxt').css('border', '3px solid green')
         $('#itemQtyTxtLbl').text('')
         if (e.key === "Enter") {
@@ -117,17 +114,25 @@ $('#itemQtyTxt').on('keydown', function (e) {
         }
     } else {
         $('#itemQtyTxt').css('border', '3px solid red');
-        $('#itemQtyTxtLbl').text("Your input can't be validated, Ex - Jack Daniel  ")
+        $('#itemQtyTxtLbl').text("Your input can't be validated, Ex - 0 < x  ")
     }
 })
 
-$('#unitPriceTxt').on('keydown', function (e) {
-    if (e.key === "Enter") {
-        saveItem()
-        $('#itemIdTxt').focus()
+/* reg-x for item unit price text */
+$('#unitPriceTxt').on('keyup', function (e) {
+    if(/^([0-9]{2,6}.[0-9]{1,2})$/.test($('#unitPriceTxt').val())){
+        $('#unitPriceTxt').css('border', '3px solid green')
+        $('#itemUnitPriceTxtLbl').text('')
+        if (e.key === "Enter") {
+            saveItem()
+            $('#itemIdTxt').focus()
+        }
+    } else {
+        $('#unitPriceTxt').css('border', '3px solid red');
+        $('#itemUnitPriceTxtLbl').text("Your input can't be validated, Ex - 120.99  ")
     }
 })
-/* -------------------------------------------- */
+
 
 /* save item details */
 function saveItem() {
