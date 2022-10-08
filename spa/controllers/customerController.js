@@ -110,24 +110,7 @@ validator
 
 
 
-//
-// /* reg-x for customer name text */
-// $('#cusNameTxt').on('keyup', function (e) {
-//     if (/^[A-z ]{3,20}$/.test($('#cusNameTxt').val())) {
-//
-//         $('#cusNameTxt').css('border', '3px solid green')
-//         $('#customerNameLbl').text('')
-//
-//         if (e.key === "Enter") {
-//             $('#cusAddressTxt').focus()
-//         }
-//
-//     } else {
-//
-//         $('#cusNameTxt').css('border', '3px solid red');
-//         $('#customerNameLbl').text("Your input can't be validated, Ex - Mahesh  ")
-//     }
-// })
+
 //
 // /* reg-x for customer address text */
 // $('#cusAddressTxt').on('keyup', function (e) {

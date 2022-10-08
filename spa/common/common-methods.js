@@ -48,7 +48,74 @@ function searchResultNotFound() {
     })
 }
 
+/** search any Object in arraylist */
+function search(id,arrayReferenceName) {
+
+    /**
+     * arrayReferenceName - Enter the reference name of the array you want to select object
+     * id - Enter the ID you want to search here.
+     */
+
+    for (let i = 0; i < arrayReferenceName.length; i++) {
+        if (arrayReferenceName[i].id === id) {
+            return arrayReferenceName[i];
+        }
+    }
+}
+
+/** delete any object in arraylist */
+function deleteObj(textField,arrayRefNameForDelete){
+
+    /**
+     * arrayRefNameForDelete - Enter the reference name of the array you want to select object
+     * textField - Enter the ID here in the text field where you type the ID you want to select.
+     */
+
+    let itemSearchResult = search($(textField).val(),arrayRefNameForDelete)
+    if (itemSearchResult != null) {
+
+        let indexOfItem = arrayRefNameForDelete.indexOf(itemSearchResult)
+        arrayRefNameForDelete.splice(indexOfItem, 1)
+        loadAllItems()
+        return true;
+
+    } else {
+        return false
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// /** update customer or item */
+// function update(){
+// let searchValue =
+// }
+//
+// function updateCustomer(customerID) {
+//     let customer = searchCustomer(customerID);
+//     if (customer != null) {
+//         customer.id = $("#txtCustomerID").val();
+//         customer.name = $("#txtCustomerName").val();
+//         customer.address = $("#txtCustomerAddress").val();
+//         customer.salary = $("#txtCustomerSalary").val();
+//         loadAllCustomers();
+//         return true;
+//     } else {
+//         return false;
+//     }
+//
+// }
+
 /** regular expression matcher */
+/*
 function validator(txtField,regXPattern,warningText,errorLbl,nextTxtField){
     $(txtField).on('keyup', function (e) {
         if (regXPattern.test($(txtField).val())) {
@@ -63,4 +130,5 @@ function validator(txtField,regXPattern,warningText,errorLbl,nextTxtField){
         }
     })
 }
+*/
 
