@@ -74,14 +74,17 @@ function deleteObj(textField,arrayRefNameForDelete){
      * textField - Enter the ID here in the text field where you type the ID you want to select.
      */
 
-    let itemSearchResult = search($(textField).val(),arrayRefNameForDelete)
-    if (itemSearchResult != null) {
+    let SearchResult = search($(textField).val(),arrayRefNameForDelete)
+    if (SearchResult != null) {
 
-        let indexOfItem = arrayRefNameForDelete.indexOf(itemSearchResult)
+        let indexOfItem = arrayRefNameForDelete.indexOf(SearchResult)
         arrayRefNameForDelete.splice(indexOfItem, 1)
-        loadAllItems()
-        return true;
 
+        //TODO search how to pass method like parameter and remove this waste methods
+        /** this two method remove and implement one use ful method */
+        loadAllItems()
+        loadAllCustomer()
+        return true;
     } else {
         return false
     }
@@ -89,34 +92,32 @@ function deleteObj(textField,arrayRefNameForDelete){
 
 /** this is text field clear method */
 function clearTextField(txtFld){
-
     /**
      *  if you want to clear any kind of text field you can send it's id into this method as a parameter
      */
-
     $(txtFld).val('')
 }
-
-
-
-
-
-
 
 /** update customer or item */
 function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtFld) {
     let customer = search($(textField).val(),arrayRef)
     if (customer != null) {
+
+
+        //TODO item has a problem because their object properties are not equal resolve this
         customer.id = $(fstTxtFld).val();
         customer.name = $(secondTxtFld).val();
         customer.address = $(thirdTxtFld).val();
         customer.contact = $(FourthTxtFld).val();
+
+        //TODO search how to pass method like parameter and remove this waste methods
+        /** this two method remove and implement one use ful method */
         loadAllCustomer()
+        loadAllItems()
         return true;
     } else {
         return false;
     }
-
 }
 
 /** regular expression matcher */

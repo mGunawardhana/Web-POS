@@ -103,7 +103,12 @@ function saveItem() {
     /* itemObjects adding into itemDetails main Array */
     itemDetails.push(itemObject);
 
-    clearTextField('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt')
+    clearTextField(
+        '#ItemNameTxt,' +
+        '#itemIdTxt,' +
+        '#itemQtyTxt,' +
+        '#unitPriceTxt'
+    )
 
     /* saved notification */
     savedSuccessfully();
@@ -127,7 +132,12 @@ $("#srcItemID").on('keyup', function (e) {
             $("#itemQtyTxt").val(response.qty);
             $('#unitPriceTxt').val(response.unitPrice);
         } else {
-            clearTextField('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt')
+            clearTextField(
+                '#ItemNameTxt,' +
+                '#itemIdTxt,' +
+                '#itemQtyTxt,' +
+                '#unitPriceTxt'
+            )
             searchResultNotFound();
         }
     }
@@ -136,12 +146,31 @@ $("#srcItemID").on('keyup', function (e) {
 /* delete item */
 $('#deleteItemBtn').on('click', function () {
     deleteObj('#srcItemID', itemDetails)
-    clearTextField('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt')
-    $('#srcItemID').val('')
+    clearTextField(
+        '#ItemNameTxt,' +
+        '#itemIdTxt,' +
+        '#itemQtyTxt,' +
+        '#unitPriceTxt,' +
+        '#srcItemID'
+    )
 })
 
+/* update item */
+/* update customer */
+$('#updateItemBtn').on('click',function (){
+    update(
+        '#srcItemID',
+        itemDetails,
+        '#ItemNameTxt',
+        '#itemIdTxt',
+        '#itemQtyTxt',
+        '#unitPriceTxt'
+    )
+    clearTextField('#ItemNameTxt,' +
+        '#itemIdTxt,' +
+        '#itemQtyTxt,' +
+        '#unitPriceTxt,' +
+        '#srcItemID'
+    )
 
-
-
-
-
+})

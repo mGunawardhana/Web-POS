@@ -154,5 +154,4 @@ $('#updateCustomerBtn').on('click',function (){
         '#cusIdTxt,' +
         '#srcCustomerId'
     )
-
 })
