@@ -89,46 +89,27 @@ $("#srcItemID").on('keyup', function (e) {
     }
 });
 
-validator(
+/* validator for item id text field */
+validator
+(
     '#itemIdTxt',
     /^I-[0-9]{2,5}$/,
     "Your input can't be validated, Ex - I-001",
     '#itemIdTxtLbl',
-    '#ItemNameTxt')
+    '#ItemNameTxt'
+)
+
+/* validator for item name text field */
+validator
+(
+    '#ItemNameTxt',
+    /^[A-z]{2,10}$/,
+    "Your input can't be validated, Ex - Burger",
+    '#itemNameTxtLbl',
+    '#itemQtyTxt'
+)
 
 
-// /* reg-x for item id text */
-// $('#itemIdTxt').on('keyup', function (e) {
-//
-//     if (/^I-[0-9]{2,5}$/.test($('#itemIdTxt').val())) {
-//
-//         $('#itemIdTxt').css('border', '3px solid green')
-//         $('#itemIdTxtLbl').text('')
-//
-//         if (e.key === "Enter") {
-//             $('#ItemNameTxt').focus()
-//         }
-//     } else {
-//         $('#itemIdTxt').css('border', '3px solid red');
-//         $('#itemIdTxtLbl').text("Your input can't be validated, Ex - I-001  ")
-//
-//     }
-// })
-//
-// /* reg-x for item name text */
-// $('#ItemNameTxt').on('keyup', function (e) {
-//     if (/^[A-z]{2,10}$/.test($('#ItemNameTxt').val())) {
-//         $('#ItemNameTxt').css('border', '3px solid green')
-//         $('#itemNameTxtLbl').text('')
-//         if (e.key === "Enter") {
-//             $('#itemQtyTxt').focus()
-//         }
-//     } else {
-//         $('#ItemNameTxt').css('border', '3px solid red');
-//         $('#itemNameTxtLbl').text("Your input can't be validated, Ex - Burger  ")
-//     }
-// })
-//
 // /* reg-x for item qty text */
 // $('#itemQtyTxt').on('keyup', function (e) {
 //     if (/^[1-9]{1,4}$/.test($('#itemQtyTxt').val())) {

@@ -89,13 +89,24 @@ $("#srcCustomerId").on('keydown', function (e) {
 });
 
 /* reg-x for customer id text */
-validator(
+validator
+(
     '#cusIdTxt',
     /^(C-)[0-9]{2,4}$/,
     "Your input can't be validated, Ex - C-001  ",
     '#customerIdLbl',
-    '#cusNameTxt')
+    '#cusNameTxt'
+)
 
+
+validator
+(
+    '#cusNameTxt',
+    /^[A-z ]{3,20}$/,
+    "Your input can't be validated, Ex - Mahesh",
+    '#customerNameLbl',
+    '#cusAddressTxt'
+)
 
 
 
