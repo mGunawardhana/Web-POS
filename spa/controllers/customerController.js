@@ -1,25 +1,24 @@
 /*
- *
  *  * Developed by - mGunawardhana
  *  * Contact email - mrgunawardhana27368@gmail.com
  *  * what's app - 071 - 9043372
- *
  */
 
 /** CUSTOMER PAGE OPTIONS  */
 
-/* clear customer details */
-function clearCustomerTextFields() {
-    $('#cusIdTxt,#cusNameTxt,#cusAddressTxt,#cusContactTxt').val('');
-}
-
 /* load all Customer to table */
 function loadAllCustomer() {
+
     /* removing repeating issue */
     $("#customerTableBody").empty();
 
     for (let i of customerDetails) {
-        let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.address}</td><td>${i.contact}</td></tr>`;
+        let row = `<tr>
+                        <td>${i.id}</td>
+                        <td>${i.name}</td>
+                        <td>${i.address}</td>
+                        <td>${i.contact}</td>
+                   </tr>`;
         $('#customerTableBody').append(row);
     }
 }
@@ -31,8 +30,66 @@ $('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt').on('keydown', function 
     }
 })
 
+/* reg-x for customer name text */
+$('#cusIdTxt').on('keyup', function (e) {
+    if (/^(C-0)[0-9]{2,4}$/.test($('#cusIdTxt').val())) {
+        $('#cusIdTxt').css('border', '3px solid green')
+        $('#customerIdLbl').text('')
+        if (e.key === "Enter") {
+            $('#cusNameTxt').focus()
+        }
+    } else {
+        $('#cusIdTxt').css('border', '3px solid red');
+        $('#customerIdLbl').text("Your input can't be validated, Ex - C-001 ")
+    }
+})
+
+/* reg-x for customer name text */
+$('#cusNameTxt').on('keyup', function (e) {
+    if (/^[A-z]{3,30}$/.test($('#cusNameTxt').val())) {
+        $('#cusNameTxt').css('border', '3px solid green')
+        $('#customerNameLbl').text('')
+        if (e.key === "Enter") {
+            $('#cusAddressTxt').focus()
+        }
+    } else {
+        $('#cusNameTxt').css('border', '3px solid red');
+        $('#customerNameLbl').text("Your input can't be validated, Ex - mr.Gunawardhana ")
+    }
+})
+
+/* reg-x for customer address text */
+$('#cusAddressTxt').on('keyup', function (e) {
+    if (/^[A-z]{3,30}$/.test($('#cusAddressTxt').val())) {
+        $('#cusAddressTxt').css('border', '3px solid green')
+        $('#customerAddressLbl').text('')
+        if (e.key === "Enter") {
+            $('#cusContactTxt').focus()
+        }
+    } else {
+        $('#cusAddressTxt').css('border', '3px solid red');
+        $('#customerAddressLbl').text("Your input can't be validated, Ex - Galle ")
+    }
+})
+
+/* reg-x for customer contact text */
+$('#cusContactTxt').on('keyup', function (e) {
+    if (/^(07([1245678])|091)(-)[0-9]{7}$/.test($('#cusContactTxt').val())) {
+        $('#cusContactTxt').css('border', '3px solid green')
+        $('#CustomerContactLbl').text('')
+        if (e.key === "Enter") {
+            saveCustomer()
+            $('#cusIdTxt').focus()
+        }
+    } else {
+        $('#cusContactTxt').css('border', '3px solid red');
+        $('#CustomerContactLbl').text("Your input can't be validated, Ex - 0719028827 ")
+    }
+})
+
 /* save customer option */
 function saveCustomer() {
+
 
     /* packing customer details into customerObject */
     let customerObject = {
@@ -42,15 +99,13 @@ function saveCustomer() {
         contact: $('#cusContactTxt').val()
     }
 
-    console.log(customerObject.toString())
+    /* customerObject adding into customerDetails object holding Array */
+    customerDetails.push(customerObject);
 
-    clearCustomerTextFields();
+    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt')
 
     /* saved notification for customer */
     savedSuccessfully();
-
-    /* customerObject adding into customerDetails object holding Array */
-    customerDetails.push(customerObject);
 
     loadAllCustomer()
 }
@@ -60,21 +115,10 @@ $("#addCustomerBtn").on('click', function () {
     saveCustomer()
 });
 
-/* search customer */
-function searchByCustomerID(id) {
-    for (let i = 0; i < customerDetails.length; i++) {
-        if (customerDetails[i].id === id) {
-            return customerDetails[i];
-        }
-    }
-}
-
 /* search by pressing enter option in customer form */
 $("#srcCustomerId").on('keydown', function (e) {
-
-    let response = searchByCustomerID($("#srcCustomerId").val());
+    let response = search($("#srcCustomerId").val(), customerDetails);
     let key = e.which;
-
     if (key === 13) {
         if (response) {
             $("#cusIdTxt").val(response.id);
@@ -82,69 +126,33 @@ $("#srcCustomerId").on('keydown', function (e) {
             $("#cusAddressTxt").val(response.address);
             $('#cusContactTxt').val(response.contact);
         } else {
-            clearCustomerTextFields();
+            clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt')
             searchResultNotFound();
         }
     }
 });
 
-/* reg-x for customer id text */
-validator
-(
-    '#cusIdTxt',
-    /^(C-)[0-9]{2,4}$/,
-    "Your input can't be validated, Ex - C-001  ",
-    '#customerIdLbl',
-    '#cusNameTxt'
-)
+/* delete customer */
+$('#deleteCustomerBtn').on('click', function () {
+    deleteObj('#srcCustomerId', customerDetails)
+    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt,#srcCustomerId')
+})
 
+/* update customer */
+$('#updateCustomerBtn').on('click',function (){
+    update(
+        '#srcCustomerId',
+        customerDetails,
+        '#cusIdTxt',
+        '#cusNameTxt',
+        '#cusAddressTxt',
+        '#cusContactTxt'
+    )
+    clearTextField('#cusNameTxt,' +
+        '#cusAddressTxt,' +
+        '#cusContactTxt,' +
+        '#cusIdTxt,' +
+        '#srcCustomerId'
+    )
 
-validator
-(
-    '#cusNameTxt',
-    /^[A-z ]{3,20}$/,
-    "Your input can't be validated, Ex - Mahesh",
-    '#customerNameLbl',
-    '#cusAddressTxt'
-)
-
-
-
-
-//
-// /* reg-x for customer address text */
-// $('#cusAddressTxt').on('keyup', function (e) {
-//     if (/^[A-z ]{4,20}$/.test($('#cusAddressTxt').val())) {
-//
-//         $('#cusAddressTxt').css('border', '3px solid green')
-//         $('#customerAddressLbl').text('')
-//
-//         if (e.key === "Enter") {
-//             $('#cusContactTxt').focus()
-//         }
-//
-//     } else {
-//
-//         $('#cusAddressTxt').css('border', '3px solid red');
-//         $('#customerAddressLbl').text("Your input can't be validated, Ex - Galle ")
-//     }
-// })
-//
-// /* reg-x for customer contact text */
-// $('#cusContactTxt').on('keyup', function (e) {
-//     if (/^([0-9]{10})$/.test($('#cusContactTxt').val())) {
-//
-//         $('#cusContactTxt').css('border', '3px solid green')
-//         $('#CustomerContactLbl').text('')
-//
-//         if (e.key === "Enter") {
-//             saveCustomer()
-//             $('#cusIdTxt').focus()
-//         }
-//     } else {
-//
-//         $('#cusContactTxt').css('border', '3px solid red');
-//         $('#CustomerContactLbl').text("Your input can't be validated, Ex - 0719028827 ")
-//     }
-// })
-
+})

@@ -1,8 +1,11 @@
 /*
  *  * Developed by - mGunawardhana
  *  * Contact email - mrgunawardhana27368@gmail.com
- *  * what's app - 071 - 9043372
+ *  * what's app - 071 - 733 1792
  */
+
+/** The purpose of using this script file is to minimize repetitive code. */
+
 
 /** SWEAT ALERTS */
 
@@ -82,7 +85,16 @@ function deleteObj(textField,arrayRefNameForDelete){
     } else {
         return false
     }
+}
 
+/** this is text field clear method */
+function clearTextField(txtFld){
+
+    /**
+     *  if you want to clear any kind of text field you can send it's id into this method as a parameter
+     */
+
+    $(txtFld).val('')
 }
 
 
@@ -91,28 +103,21 @@ function deleteObj(textField,arrayRefNameForDelete){
 
 
 
+/** update customer or item */
+function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtFld) {
+    let customer = search($(textField).val(),arrayRef)
+    if (customer != null) {
+        customer.id = $(fstTxtFld).val();
+        customer.name = $(secondTxtFld).val();
+        customer.address = $(thirdTxtFld).val();
+        customer.contact = $(FourthTxtFld).val();
+        loadAllCustomer()
+        return true;
+    } else {
+        return false;
+    }
 
-
-
-// /** update customer or item */
-// function update(){
-// let searchValue =
-// }
-//
-// function updateCustomer(customerID) {
-//     let customer = searchCustomer(customerID);
-//     if (customer != null) {
-//         customer.id = $("#txtCustomerID").val();
-//         customer.name = $("#txtCustomerName").val();
-//         customer.address = $("#txtCustomerAddress").val();
-//         customer.salary = $("#txtCustomerSalary").val();
-//         loadAllCustomers();
-//         return true;
-//     } else {
-//         return false;
-//     }
-//
-// }
+}
 
 /** regular expression matcher */
 /*

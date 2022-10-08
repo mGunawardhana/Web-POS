@@ -1,17 +1,10 @@
 /*
- *
  *  * Developed by - mGunawardhana
  *  * Contact email - mrgunawardhana27368@gmail.com
- *  * what's app - 071 - 9043372
- *
+ *  * what's app - 071 - 733 1792
  */
 
 /** ITEM PAGE OPTIONS - */
-
-/* clear item details */
-function clearItemTextFields() {
-    $('#itemIdTxt,#ItemNameTxt,#itemQtyTxt,#unitPriceTxt').val('');
-}
 
 /* load all items to table */
 function loadAllItems() {
@@ -36,51 +29,6 @@ $('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt').on('keydown', function (e
         e.preventDefault()
     }
 })
-
-/* save item details */
-function saveItem() {
-
-    /* packing item details into itemObject */
-    let itemObject = {
-        id: $("#itemIdTxt").val(),
-        name: $("#ItemNameTxt").val(),
-        qty: $("#itemQtyTxt").val(),
-        unitPrice: $('#unitPriceTxt').val()
-    }
-
-    clearItemTextFields()
-
-    /* itemObjects adding into itemDetails main Array */
-    itemDetails.push(itemObject);
-
-    loadAllItems()
-
-    /* saved notification */
-    savedSuccessfully();
-}
-
-/* adding item details to array */
-$("#addItemBtn").on('click', function () {
-    saveItem()
-});
-
-/* search by pressing enter option in item form */
-$("#srcItemID").on('keyup', function (e) {
-    let response = search($("#srcItemID").val(),itemDetails);
-    let key = e.which;
-    if (key === 13) {
-        if (response) {
-            $("#itemIdTxt").val(response.id);
-            $("#ItemNameTxt").val(response.name);
-            $("#itemQtyTxt").val(response.qty);
-            $('#unitPriceTxt').val(response.unitPrice);
-        } else {
-            clearItemTextFields();
-            searchResultNotFound();
-        }
-    }
-});
-
 
 /* reg-x for item name text */
 $('#itemIdTxt').on('keyup', function (e) {
@@ -141,10 +89,54 @@ $('#unitPriceTxt').on('keyup', function (e) {
     }
 })
 
-/* delete button */
+/* save object in to the array */
+function saveItem() {
+
+    /* packing item details into itemObject */
+    let itemObject = {
+        id: $("#itemIdTxt").val(),
+        name: $("#ItemNameTxt").val(),
+        qty: $("#itemQtyTxt").val(),
+        unitPrice: $('#unitPriceTxt').val()
+    }
+
+    /* itemObjects adding into itemDetails main Array */
+    itemDetails.push(itemObject);
+
+    clearTextField('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt')
+
+    /* saved notification */
+    savedSuccessfully();
+
+    loadAllItems()
+}
+
+/* save item */
+$("#addItemBtn").on('click', function () {
+    saveItem()
+});
+
+/* search item */
+$("#srcItemID").on('keyup', function (e) {
+    let response = search($("#srcItemID").val(), itemDetails);
+    let key = e.which;
+    if (key === 13) {
+        if (response) {
+            $("#itemIdTxt").val(response.id);
+            $("#ItemNameTxt").val(response.name);
+            $("#itemQtyTxt").val(response.qty);
+            $('#unitPriceTxt').val(response.unitPrice);
+        } else {
+            clearTextField('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt')
+            searchResultNotFound();
+        }
+    }
+});
+
+/* delete item */
 $('#deleteItemBtn').on('click', function () {
     deleteObj('#srcItemID', itemDetails)
-    clearItemTextFields()
+    clearTextField('#ItemNameTxt,#itemIdTxt,#itemQtyTxt,#unitPriceTxt')
     $('#srcItemID').val('')
 })
 
