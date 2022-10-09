@@ -26,70 +26,36 @@ function loadAllCustomer() {
 /* disabling tab */
 $('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt').on('keydown', function (e) {
     if (e.key === "Tab") {
-        e.preventDefault()
+        e.preventDefault();
     }
 })
 
-/* reg-x for customer name text */
-$('#cusIdTxt').on('keyup', function (e) {
-    if (/^(C-0)[0-9]{2,4}$/.test($('#cusIdTxt').val())) {
-        $('#cusIdTxt').css('border', '3px solid green')
-        $('#customerIdLbl').text('')
-        if (e.key === "Enter") {
-            $('#cusNameTxt').focus()
-        }
-    } else {
-        $('#cusIdTxt').css('border', '3px solid red');
-        $('#customerIdLbl').text("Your input can't be validated, Ex - C-001 ")
-    }
-})
+validator(
+    '#cusIdTxt', /^(C-0)[0-9]{2,4}$/,
+    "Your input can't be validated, Ex - C-001",
+    '#customerIdLbl', '#cusNameTxt'
+)
 
-/* reg-x for customer name text */
-$('#cusNameTxt').on('keyup', function (e) {
-    if (/^[A-z]{3,30}$/.test($('#cusNameTxt').val())) {
-        $('#cusNameTxt').css('border', '3px solid green')
-        $('#customerNameLbl').text('')
-        if (e.key === "Enter") {
-            $('#cusAddressTxt').focus()
-        }
-    } else {
-        $('#cusNameTxt').css('border', '3px solid red');
-        $('#customerNameLbl').text("Your input can't be validated, Ex - mr.Gunawardhana ")
-    }
-})
+validator(
+    '#cusNameTxt', /^[A-z]{3,30}$/,
+    "Your input can't be validated, Ex - mr.Gunawardhana",
+    '#customerNameLbl', '#cusAddressTxt'
+)
 
-/* reg-x for customer address text */
-$('#cusAddressTxt').on('keyup', function (e) {
-    if (/^[A-z]{3,30}$/.test($('#cusAddressTxt').val())) {
-        $('#cusAddressTxt').css('border', '3px solid green')
-        $('#customerAddressLbl').text('')
-        if (e.key === "Enter") {
-            $('#cusContactTxt').focus()
-        }
-    } else {
-        $('#cusAddressTxt').css('border', '3px solid red');
-        $('#customerAddressLbl').text("Your input can't be validated, Ex - Galle ")
-    }
-})
+validator(
+    '#cusAddressTxt', /^[A-z]{3,30}$/,
+    "Your input can't be validated, Ex - Galle ",
+    '#customerAddressLbl', '#cusContactTxt'
+)
 
-/* reg-x for customer contact text */
-$('#cusContactTxt').on('keyup', function (e) {
-    if (/^(07([1245678])|091)(-)[0-9]{7}$/.test($('#cusContactTxt').val())) {
-        $('#cusContactTxt').css('border', '3px solid green')
-        $('#CustomerContactLbl').text('')
-        if (e.key === "Enter") {
-            saveCustomer()
-            $('#cusIdTxt').focus()
-        }
-    } else {
-        $('#cusContactTxt').css('border', '3px solid red');
-        $('#CustomerContactLbl').text("Your input can't be validated, Ex - 0719028827 ")
-    }
-})
+validator(
+    '#cusContactTxt', /^(07([1245678])|091)(-)[0-9]{7}$/,
+    "Your input can't be validated, Ex - 0719028827",
+    '#CustomerContactLbl', '#cusIdTxt'
+)
 
 /* save customer option */
 function saveCustomer() {
-
 
     /* packing customer details into customerObject */
     let customerObject = {
@@ -102,17 +68,17 @@ function saveCustomer() {
     /* customerObject adding into customerDetails object holding Array */
     customerDetails.push(customerObject);
 
-    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt')
+    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt');
 
     /* saved notification for customer */
     savedSuccessfully();
 
-    loadAllCustomer()
+    loadAllCustomer();
 }
 
 /* saving customer object */
 $("#addCustomerBtn").on('click', function () {
-    saveCustomer()
+    saveCustomer();
 });
 
 /* search by pressing enter option in customer form */
@@ -124,9 +90,9 @@ $("#srcCustomerId").on('keydown', function (e) {
             $("#cusIdTxt").val(response.id);
             $("#cusNameTxt").val(response.name);
             $("#cusAddressTxt").val(response.address);
-            $('#cusContactTxt').val(response.contact);
+            $("#cusContactTxt").val(response.contact);
         } else {
-            clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt')
+            clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt');
             searchResultNotFound();
         }
     }
@@ -134,24 +100,15 @@ $("#srcCustomerId").on('keydown', function (e) {
 
 /* delete customer */
 $('#deleteCustomerBtn').on('click', function () {
-    deleteObj('#srcCustomerId', customerDetails)
-    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt,#srcCustomerId')
+    deleteObj('#srcCustomerId', customerDetails);
+    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt,#srcCustomerId');
 })
 
 /* update customer */
 $('#updateCustomerBtn').on('click',function (){
     update(
-        '#srcCustomerId',
-        customerDetails,
-        '#cusIdTxt',
-        '#cusNameTxt',
-        '#cusAddressTxt',
-        '#cusContactTxt'
-    )
-    clearTextField('#cusNameTxt,' +
-        '#cusAddressTxt,' +
-        '#cusContactTxt,' +
-        '#cusIdTxt,' +
-        '#srcCustomerId'
-    )
+        '#srcCustomerId', customerDetails, '#cusIdTxt',
+        '#cusNameTxt', '#cusAddressTxt', '#cusContactTxt'
+    );
+    clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt,#srcCustomerId');
 })

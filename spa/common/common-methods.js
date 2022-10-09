@@ -52,33 +52,45 @@ function searchResultNotFound() {
 }
 
 /** search any Object in arraylist */
-function search(id,arrayReferenceName) {
+function search(id, arrayReferenceName) {
 
     /**
-     * arrayReferenceName - Enter the reference name of the array you want to select object
-     * id - Enter the ID you want to search here.
-     */
+     * How to use this method ?
+     *     -------------------------------------------------------------------------------------->
+     *     arrayReferenceName - Enter the reference name of the array you want to select object
+     *     id                 - Enter the ID you want to search here.
+     *     -------------------------------------------------------------------------------------->
+     *
+     *      © 2022 mGunawardhana,INC. ALL RIGHTS RESERVED.
+     *
+     * */
 
     for (let i = 0; i < arrayReferenceName.length; i++) {
-        if (arrayReferenceName[i].id === id || arrayReferenceName[i].itemCode ===id) {
+        if (arrayReferenceName[i].id === id || arrayReferenceName[i].itemCode === id) {
             return arrayReferenceName[i];
         }
     }
 }
 
 /** delete any object in arraylist */
-function deleteObj(textField,arrayRefNameForDelete){
+function deleteObj(textField, arrayRefNameForDelete) {
 
     /**
-     * arrayRefNameForDelete - Enter the reference name of the array you want to select object
-     * textField - Enter the ID here in the text field where you type the ID you want to select.
-     */
+     * How to use this method ?
+     *     ----------------------------------------------------------------------------------------->
+     *     arrayRefNameForDelete - Enter the reference name of the array you want to select object
+     *     textField - Enter the ID here in the text field where you type the ID you want to select.
+     *     ----------------------------------------------------------------------------------------->
+     *
+     *     © 2022 mGunawardhana,INC. ALL RIGHTS RESERVED.
+     *
+     * */
 
-    let SearchResult = search($(textField).val(),arrayRefNameForDelete)
+    let SearchResult = search($(textField).val(), arrayRefNameForDelete)
     if (SearchResult != null) {
 
-        let indexOfItem = arrayRefNameForDelete.indexOf(SearchResult)
-        arrayRefNameForDelete.splice(indexOfItem, 1)
+        let indexOfItem = arrayRefNameForDelete.indexOf(SearchResult);
+        arrayRefNameForDelete.splice(indexOfItem, 1);
 
         //TODO search how to pass method like parameter and remove this waste methods
         /** this two method remove and implement one use ful method */
@@ -86,25 +98,23 @@ function deleteObj(textField,arrayRefNameForDelete){
         loadAllCustomer();
         return true;
     } else {
-        return false
+        return false;
     }
 }
 
 /** this is text field clear method */
-function clearTextField(txtFld){
+function clearTextField(txtFld) {
     /**
      *  if you want to clear any kind of text field you can send it's id into this method as a parameter
      */
-    $(txtFld).val('')
+    $(txtFld).val('');
 }
 
 /** update customer or item */
-function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtFld) {
-    let caughtObj = search($(textField).val(),arrayRef);
+function update(textField, arrayRef, fstTxtFld, secondTxtFld, thirdTxtFld, FourthTxtFld) {
+    let caughtObj = search($(textField).val(), arrayRef);
     if (caughtObj != null) {
 
-
-        //TODO item has a problem because their object properties are not equal resolve this
         caughtObj.itemCode = $(fstTxtFld).val();
         caughtObj.id = $(fstTxtFld).val();
 
@@ -115,9 +125,8 @@ function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtF
         caughtObj.qty = $(thirdTxtFld).val();
 
         caughtObj.contact = $(FourthTxtFld).val();
-        caughtObj.unitPrice =$(FourthTxtFld).val();
+        caughtObj.unitPrice = $(FourthTxtFld).val();
 
-        //TODO search how to pass method like parameter and remove this waste methods
         /** this two method remove and implement one use ful method */
         loadAllCustomer();
         loadAllItems();
@@ -128,21 +137,61 @@ function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtF
 }
 
 /** regular expression matcher */
+function validator(txtField, regXPattern, warningText, errorLbl, nextTxtField) {
+    /**
+     * How to use this method ?
+     *      -------------------------------------------------------------------------->
+     *      txtField        -    pass text field if you want to select
+     *      regXPattern     -    pass your reg-x pattern here and validate your text
+     *      warningText     -    pass your validation error, warning message
+     *      errorLbl        -    pass id if you have error label
+     *      nextTxtField    -    pass next text field id here
+     *      -------------------------------------------------------------------------->
+     *
+     *      © 2022 mGunawardhana,INC. ALL RIGHTS RESERVED.
+     * */
 
-function validator(txtField,regXPattern,warningText,errorLbl,nextTxtField){
     $(txtField).on('keyup', function (e) {
-        if (regXPattern.test($(txtField).val())) {
-            $(txtField).css('border', '3px solid green')
-            $(errorLbl).text('')
-            if (e.key === "Enter") {
 
-                $(nextTxtField).focus()
+            if (regXPattern.test($(txtField).val())) {
+                $(txtField).css('border', '3px solid green');
+                $(errorLbl).text('');
+
+                /** this one is compatible for item form */
+                if (e.key === "Enter" && txtField !== "#unitPriceTxt") {
+                    $(nextTxtField).focus();
+
+                } else if (e.key === "Enter" && txtField === "#unitPriceTxt") {
+                    saveItem();
+                    $(nextTxtField).focus();
+
+                } else {
+                    return false
+                }
+
+                /** this one is compatible for customer form */
+                if (e.key === "Enter" && txtField !== "#cusContactTxt") {
+                    $(nextTxtField).focus();
+
+                } else if (e.key === "Enter" && txtField === "#cusContactTxt") {
+                    saveCustomer();
+                    $(nextTxtField).focus();
+
+                } else {
+                    return false;
+                }
+
+            } else {
+                $(txtField).css('border', '3px solid red');
+                $(errorLbl).text(warningText);
+
             }
-        } else {
-            $(txtField).css('border', '3px solid red');
-            $(errorLbl).text(warningText)
         }
-    })
+    )
 }
+
+
+
+
 
 
