@@ -14,8 +14,8 @@ function loadAllItems() {
 
     for (let i of itemDetails) {
         let row = `<tr>
-                        <td>${i.id}</td>
-                        <td>${i.name}</td>
+                        <td>${i.itemCode}</td>
+                        <td>${i.itemName}</td>
                         <td>${i.qty}</td>
                         <td>${i.unitPrice}</td>
                    </tr>`;
@@ -94,8 +94,8 @@ function saveItem() {
 
     /* packing item details into itemObject */
     let itemObject = {
-        id: $("#itemIdTxt").val(),
-        name: $("#ItemNameTxt").val(),
+        itemCode: $("#itemIdTxt").val(),
+        itemName: $("#ItemNameTxt").val(),
         qty: $("#itemQtyTxt").val(),
         unitPrice: $('#unitPriceTxt').val()
     }
@@ -127,8 +127,8 @@ $("#srcItemID").on('keyup', function (e) {
     let key = e.which;
     if (key === 13) {
         if (response) {
-            $("#itemIdTxt").val(response.id);
-            $("#ItemNameTxt").val(response.name);
+            $("#itemIdTxt").val(response.itemCode);
+            $("#ItemNameTxt").val(response.itemName);
             $("#itemQtyTxt").val(response.qty);
             $('#unitPriceTxt').val(response.unitPrice);
         } else {
@@ -161,8 +161,8 @@ $('#updateItemBtn').on('click',function (){
     update(
         '#srcItemID',
         itemDetails,
-        '#ItemNameTxt',
         '#itemIdTxt',
+        '#ItemNameTxt',
         '#itemQtyTxt',
         '#unitPriceTxt'
     )

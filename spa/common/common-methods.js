@@ -60,7 +60,7 @@ function search(id,arrayReferenceName) {
      */
 
     for (let i = 0; i < arrayReferenceName.length; i++) {
-        if (arrayReferenceName[i].id === id) {
+        if (arrayReferenceName[i].id === id || arrayReferenceName[i].itemCode ===id) {
             return arrayReferenceName[i];
         }
     }
@@ -82,8 +82,8 @@ function deleteObj(textField,arrayRefNameForDelete){
 
         //TODO search how to pass method like parameter and remove this waste methods
         /** this two method remove and implement one use ful method */
-        loadAllItems()
-        loadAllCustomer()
+        loadAllItems();
+        loadAllCustomer();
         return true;
     } else {
         return false
@@ -100,20 +100,27 @@ function clearTextField(txtFld){
 
 /** update customer or item */
 function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtFld) {
-    let customer = search($(textField).val(),arrayRef)
-    if (customer != null) {
+    let caughtObj = search($(textField).val(),arrayRef);
+    if (caughtObj != null) {
 
 
         //TODO item has a problem because their object properties are not equal resolve this
-        customer.id = $(fstTxtFld).val();
-        customer.name = $(secondTxtFld).val();
-        customer.address = $(thirdTxtFld).val();
-        customer.contact = $(FourthTxtFld).val();
+        caughtObj.itemCode = $(fstTxtFld).val();
+        caughtObj.id = $(fstTxtFld).val();
+
+        caughtObj.itemName = $(secondTxtFld).val();
+        caughtObj.name = $(secondTxtFld).val();
+
+        caughtObj.address = $(thirdTxtFld).val();
+        caughtObj.qty = $(thirdTxtFld).val();
+
+        caughtObj.contact = $(FourthTxtFld).val();
+        caughtObj.unitPrice =$(FourthTxtFld).val();
 
         //TODO search how to pass method like parameter and remove this waste methods
         /** this two method remove and implement one use ful method */
-        loadAllCustomer()
-        loadAllItems()
+        loadAllCustomer();
+        loadAllItems();
         return true;
     } else {
         return false;
@@ -121,13 +128,14 @@ function update(textField,arrayRef,fstTxtFld,secondTxtFld,thirdTxtFld,FourthTxtF
 }
 
 /** regular expression matcher */
-/*
+
 function validator(txtField,regXPattern,warningText,errorLbl,nextTxtField){
     $(txtField).on('keyup', function (e) {
         if (regXPattern.test($(txtField).val())) {
             $(txtField).css('border', '3px solid green')
             $(errorLbl).text('')
             if (e.key === "Enter") {
+
                 $(nextTxtField).focus()
             }
         } else {
@@ -136,5 +144,5 @@ function validator(txtField,regXPattern,warningText,errorLbl,nextTxtField){
         }
     })
 }
-*/
+
 
