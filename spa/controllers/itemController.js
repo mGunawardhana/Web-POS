@@ -4,6 +4,7 @@
  *  * what's app - 071 - 733 1792
  */
 
+/** item code generator */
 let itemIdAutoGenerator = 1;
 $('#itemIdTxt').val("I-0"+itemIdAutoGenerator)
 
