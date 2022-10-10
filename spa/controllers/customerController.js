@@ -84,6 +84,7 @@ function saveCustomer() {
     loadAllCustomer();
     customerIdAutoGenerator++;
     $('#cusIdTxt').val("C-0"+customerIdAutoGenerator);
+    loadAllCustomersToCombo();
 }
 
 /** saving customer object */

@@ -292,7 +292,7 @@
                                  style="background-color: black;font-weight: bold; color: white">Customer Details
                             </div>
                             <!-- customer details card section body set up -->
-                            <div class="card-body" style="background-color: #EFEFEF">
+                            <div class="card-body" style="background-color: #ffffff">
                                 <!-- starting form -->
                                 <form action="">
                                     <!-- order id text field and label set up -->
@@ -319,16 +319,18 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label>Customer ID</label>
-                                                <label for="orderCustomerID"></label><input class="form-control"
-                                                                                            id="orderCustomerID">
+                                                <label for="orderCustomerID"></label>
+<!--                                                <input class="form-control" id="orderCustomerID">-->
+                                                <select class="form-control" id="orderCustomerID"></select>
                                             </div>
                                         </div>
                                         <!-- customer name text field -->
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label>Customer :</label>
-                                                <label for="selectCusID"></label>
-                                                <select class="form-control" id="selectCusID"></select>
+                                                <label>Customer Name:</label>
+                                                <label for="selectCusName"></label>
+<!--                                                <select class="form-control" id="selectCusID"></select>-->
+                                                <input class="form-control" disabled id="selectCusName">
                                                 <span class="control-error" id="cus-empty-error"></span>
                                             </div>
                                         </div>
@@ -338,9 +340,9 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label>Name :</label>
-                                                <label for="orderCustomerName"></label><input class="form-control"
-                                                                                              id="orderCustomerName"
+                                                <label>Contact :</label>
+                                                <label for="orderCustomerContact"></label><input class="form-control" disabled
+                                                                                              id="orderCustomerContact"
                                                                                               type="text">
                                             </div>
                                         </div>
@@ -348,7 +350,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>Address :</label>
-                                                <label for="orderCustomerAddress"></label><input class="form-control" id="orderCustomerAddress"
+                                                <label for="orderCustomerAddress"></label><input class="form-control" disabled id="orderCustomerAddress"
                                                                                                  type="text">
                                             </div>
                                         </div>
@@ -358,8 +360,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 mt-lg-0 mt-3" style="padding: 0">
-                        <div class="card" style="background-color:#EFEFEF ">
+                    <div class="col-lg-4 mt-lg-0 mt-3" style="padding: 0">
+                        <div class="card" style="background-color:#ffffff ">
                             <!-- item selector set up -->
                             <div class="card-header bg-dark text-light font-weight-bolder" style="font-weight: bold">
                                 Item Select
@@ -371,26 +373,26 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label>Item :</label>
-                                                <label for="selectItemCode"></label><select class="form-control"
-                                                                                            id="selectItemCode"></select>
-                                                <span class="control-error"
-                                                      id="item-empty-error"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <div class="form-group">
                                                 <label>Item Code :</label>
                                                 <label for="txtItemCode"></label><input class="form-control"
                                                                                         id="txtItemCode" type="text">
                                             </div>
                                         </div>
 
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Item :</label>
+                                                <label for="selectItemCode"></label><select class="form-control" disabled
+                                                                                            id="selectItemCode"></select>
+                                                <span class="control-error"
+                                                      id="item-empty-error"></span>
+                                            </div>
+                                        </div>
+
                                         <div class="col-5">
                                             <div class="form-group">
                                                 <label>Item Name :</label>
-                                                <label for="txtItemDescription"></label><input class="form-control"
+                                                <label for="txtItemDescription"></label><input class="form-control" disabled
                                                                                                id="txtItemDescription" type="text">
                                             </div>
                                         </div>
@@ -398,14 +400,14 @@
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label class="">Price :</label>
-                                                <label for="txtItemPrice"></label><input class="form-control" id="txtItemPrice" type="text">
+                                                <label for="txtItemPrice"></label><input class="form-control" disabled id="txtItemPrice" type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label class="">QtyOnH :</label>
-                                                <label for="txtQTYOnHand"></label><input class="form-control" id="txtQTYOnHand" type="text">
+                                                <label for="txtQTYOnHand"></label><input class="form-control" disabled id="txtQTYOnHand" type="text">
                                             </div>
                                         </div>
 
