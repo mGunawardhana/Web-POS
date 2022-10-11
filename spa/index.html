@@ -13,8 +13,10 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="bootstraps/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstraps/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="bootstraps/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet">
+
+    <link href="assets/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -41,7 +43,7 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <button  aria-current="page" class="nav-link btn btn-dark active" id="Home">Home</button>
+                        <button aria-current="page" class="nav-link btn btn-dark active" id="Home">Home</button>
                     </li>
 
                     <li class="nav-item">
@@ -52,7 +54,7 @@
                         <button class="nav-link btn btn-dark" id="Item">Items</button>
                     </li>
 
-                    <li class="nav-item" >
+                    <li class="nav-item">
                         <button class="nav-link btn btn-dark" id="Order">Orders</button>
                     </li>
                 </ul>
@@ -63,42 +65,51 @@
 </header>
 
 <!-- introducing item form -->
-<section class="container-fluid"  id="itemForm" style="display:none">
+<section class="container-fluid" id="itemForm" style="display: none">
 
     <section class="row mt-0  justify-content-around" style="margin-right: 0; margin-left: 0">
         <div class="col-12 col-md-5 mt-5">
-            <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2" style=" background-color:#130f40;
-         border-radius: 10px;
-          border: 3px solid black;
-           box-shadow: 0 0 12px 8px #7c7b7e;">
+            <!--<div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2" style=" background-color:#130f40;-->
+
+
+            <div class="pt-3 pb-5 px-3 py-3 mt-2 mainLoader">
 
                 <!-- manage customer label setup -->
-                <h1 class="h1 mb-3" style="font-family: 'Kanit', sans-serif;color: #ffffff; font-weight: bold ">Manage
+                <h1 class="h1 mb-3" style="font-family: 'Kanit', sans-serif;color: #2d6a0a; font-weight: bold ">Manage
                     Items</h1>
                 <div class="mb-3">
 
                     <!-- search text label -->
-                    <label class="form-label" for="srcItemID" style="color: #ffffff; font-weight: bold">Search
+                    <label class="form-label" for="srcItemID" style="color: #235915; font-weight: bold">Search
                         Item here</label>
 
                     <!-- text field set up -->
-                    <input class="form-control" id="srcItemID" placeholder="Item ID" type="text">
+                    <input class="searchFld form-control" id="srcItemID" placeholder="Item ID" type="text">
 
                 </div>
                 <!-- adding buttons for customer managements -->
 
                 <!-- add button -->
-                <button id="addItemBtn" class="btn" style="background-color: #2ed573; color: black;font-weight: bold;border: 3px solid white" type="button">Add Item</button>
+                <button class="btn btnBackGround m-lg-2" id="addItemBtn"
+                        style="background-color: #2ed573; color: black; font-weight: bold"
+                        type="button">Add Item
+                </button>
                 <!-- update button -->
-                <button id="updateItemBtn" class="btn" style="background-color: #eccc68; color: black;font-weight: bold;border: 3px solid white"  type="button">Update Item</button>
+                <button class="btn btnBackGround m-lg-2"  id="updateItemBtn"
+                        style="background-color: #eccc68; color: black;font-weight: bold;"
+                        type="button">Update Item
+                </button>
                 <!-- delete button -->
-                <button id="deleteItemBtn" class="btn" style="background-color: #ff4757; color: black;font-weight: bold;border: 3px solid white" type="button">Delete Item</button>
+                <button class="btn btnBackGround m-lg-2" id="deleteItemBtn"
+                        style="background-color: #ff4757; color: black;font-weight: bold;"
+                        type="button">Delete Item
+                </button>
 
             </div>
         </div>
 
         <!-- customer details form -->
-        <div class="col-12 col-md-5 mt-3" style="border-radius: 10px; background-color: #ffffff;border: 3px solid black">
+        <div class="col-12 col-md-5 mt-3 textFldPanes">
 
             <!-- item ID set up -->
             <div class="mb-3">
@@ -136,10 +147,10 @@
     <section class="row justify-content-center w-100 mt-3">
         <div class="col" style="padding-left: 2rem">
             <!-- table container set up -->
-            <table class="table table-hover container-fluid">
+            <table class="table table-hover container-fluid classTbl">
 
                 <!-- table heading -->
-                <thead class="bg-dark text-white">
+                <thead class="bg-dark text-white tableHead">
 
                 <tr>
                     <th>Item Code</th>
@@ -165,39 +176,36 @@
 
     <section class="row mt-0  justify-content-around" style="margin-right: 0; margin-left: 0">
         <div class="col-12 col-md-5 mt-5">
-            <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2" style=" background-color:#130f40;
-         border-radius: 10px;
-          border: 2px solid black;
-           box-shadow: 0 0 12px 8px #ffffff;">
+            <div class="pt-3 pb-5 px-3 py-3 mt-2 mainLoader">
 
                 <!-- manage customer label setup -->
-                <h1 class="h1 mb-3" style="font-family: 'Kanit', sans-serif;color: white; font-weight: bold ">Manage
+                <h1 class="h1 mb-3" style="font-family: 'Kanit', sans-serif;color: #2a6407; font-weight: bold ">Manage
                     Customer</h1>
                 <div class="mb-3">
 
                     <!-- search text label -->
-                    <label class="form-label" for="srcCustomerId" style="color: #ffffff; font-weight: bold">Search
+                    <label class="form-label" for="srcCustomerId" style="color: #3fd518; font-weight: bold">Search
                         Customer</label>
 
                     <!-- text field set up -->
-                    <input class="form-control " id="srcCustomerId" placeholder="Customer ID" type="text">
+                    <input class="searchFld form-control " id="srcCustomerId" placeholder="Customer ID" type="text">
 
                 </div>
                 <!-- adding buttons for customer managements -->
 
                 <!-- add button -->
-                <button class="btn" id="addCustomerBtn"
-                        style="background-color: #2ed573; color: black;font-weight: bold;border: 3px solid white"
+                <button class="btn btnBackGround m-lg-2" id="addCustomerBtn"
+                        style="background-color: #2ed573; color: black;font-weight: bold;"
                         type="button">Add Customer
                 </button>
                 <!-- update button -->
-                <button class="btn" id="updateCustomerBtn"
-                        style="background-color: #eccc68; color: black;font-weight: bold;border: 3px solid white"
+                <button class="btn btnBackGround m-lg-2" id="updateCustomerBtn"
+                        style="background-color: #eccc68; color: black;font-weight: bold;"
                         type="button">Update Customer
                 </button>
                 <!-- delete button -->
-                <button class="btn btn-danger" id="deleteCustomerBtn"
-                        style="background-color: #ff4757; color: black;font-weight: bold;border: 3px solid white"
+                <button class="btn btnBackGround m-lg-2" id="deleteCustomerBtn"
+                        style="background-color: #ff4757; color: black;font-weight: bold;"
                         type="button">Delete Customer
                 </button>
 
@@ -205,13 +213,12 @@
         </div>
 
         <!-- customer details form -->
-        <div class="col-12 col-md-5 mt-3"
-             style="border-radius: 10px; background-color: #ffffff;border: 3px solid black">
+        <div class="col-12 col-md-5 mt-3 textFldPanes">
 
             <!-- customer ID set up -->
             <div class="mb-3">
                 <label class="form-label" for="cusIdTxt" style="font-weight: bolder">Customer ID</label>
-                <input class="form-control " disabled id="cusIdTxt" placeholder="Customer ID" type="text">
+                <input class="searchFld form-control " disabled id="cusIdTxt" placeholder="Customer ID" type="text">
                 <p><small class="text-danger fw-bold" id="customerIdLbl"></small></p>
             </div>
 
@@ -243,10 +250,10 @@
     <section class="row justify-content-center w-100 mt-3">
         <div class="col" style="padding-left: 2rem">
             <!-- table container set up -->
-            <table class="table table-hover container-fluid">
+            <table class="table table-hover container-fluid classTbl">
 
                 <!-- table heading -->
-                <thead class="bg-dark text-white">
+                <thead class="bg-dark text-white tableHead">
 
                 <tr>
                     <th>Customer ID</th>
@@ -271,15 +278,15 @@
 
 <!-- orders form -->
 <main>
-    <main class="container-fluid" id="orderForm">
+    <main class="container-fluid" id="orderForm" style="display: none">
         <div class="container-fluid mt-4">
             <div class="jumbotron pt-4">
                 <div class="row w-100">
                     <div class="col-lg-4" style="padding-left: 20px">
-                        <div class="card">
+                        <div class="card formBackGround" style="margin-right: 30px; margin-left: 60px">
                             <!-- set up header -->
                             <div class="card-header font-weight-bolder"
-                                 style="background-color: black;font-weight: bold; color: white">Customer Details
+                                 style="background-color: black;font-weight: bold; color: #ffffff">Customer Details
                             </div>
                             <!-- customer details card section body set up -->
                             <div class="card-body" style="background-color: #ffffff">
@@ -290,7 +297,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label>Order ID :</label>
-                                                <label for="txtOrderID"></label><input class="form-control"
+                                                <label for="txtOrderID"></label><input class=" form-control"
                                                                                        id="txtOrderID" type="text">
                                                 <span class="control-error" id="orderId-invalid-error"></span>
                                             </div>
@@ -310,7 +317,7 @@
                                             <div class="form-group">
                                                 <label>Customer ID</label>
                                                 <label for="orderCustomerID"></label>
-<!--                                                <input class="form-control" id="orderCustomerID">-->
+                                                <!--                                                <input class="form-control" id="orderCustomerID">-->
                                                 <select class="form-control" id="orderCustomerID"></select>
                                             </div>
                                         </div>
@@ -319,8 +326,8 @@
                                             <div class="form-group">
                                                 <label>Customer Name:</label>
                                                 <label for="selectCusName"></label>
-<!--                                                <select class="form-control" id="selectCusID"></select>-->
-                                                <input class="form-control" disabled id="selectCusName">
+                                                <!--                                                <select class="form-control" id="selectCusID"></select>-->
+                                                <input class="form-control " disabled id="selectCusName">
                                                 <span class="control-error" id="cus-empty-error"></span>
                                             </div>
                                         </div>
@@ -331,16 +338,19 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>Contact :</label>
-                                                <label for="orderCustomerContact"></label><input class="form-control" disabled
-                                                                                              id="orderCustomerContact"
-                                                                                              type="text">
+                                                <label for="orderCustomerContact"></label><input class="form-control"
+                                                                                                 disabled
+                                                                                                 id="orderCustomerContact"
+                                                                                                 type="text">
                                             </div>
                                         </div>
                                         <!-- customer address text field -->
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>Address :</label>
-                                                <label for="orderCustomerAddress"></label><input class="form-control" disabled id="orderCustomerAddress"
+                                                <label for="orderCustomerAddress"></label><input class="form-control"
+                                                                                                 disabled
+                                                                                                 id="orderCustomerAddress"
                                                                                                  type="text">
                                             </div>
                                         </div>
@@ -350,8 +360,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 mt-lg-0 mt-3" style="padding: 0">
-                        <div class="card" style="background-color:#ffffff ">
+<!--                  MARGIN 20 TBBA KELA UNOT AYN KARAPAN   -->
+                    <div class="col-lg-4 mt-lg-0 mt-3" style="padding: 0; margin-right: 40px">
+                        <div class="card formBackGround" style="background-color:#ffffff ">
                             <!-- item selector set up -->
                             <div class="card-header bg-dark text-light font-weight-bolder" style="font-weight: bold">
                                 Item Select
@@ -365,7 +376,7 @@
                                             <div class="form-group">
                                                 <label>Item Code :</label>
                                                 <label for="itemCodeCombo"></label>
-<!--                                                <input class="form-control" id="txtItemCode" type="text">-->
+                                                <!--                                                <input class="form-control" id="txtItemCode" type="text">-->
                                                 <select class="form-control" id="itemCodeCombo"></select>
                                             </div>
                                         </div>
@@ -376,7 +387,7 @@
                                                 <label for="selectItemCode"></label>
 
                                                 <input class="form-control" disabled id="selectItemCode" type="text">
-<!--                                                <select class="form-control" disabled id="selectItemCode"></select>-->
+                                                <!--                                                <select class="form-control" disabled id="selectItemCode"></select>-->
                                                 <span class="control-error"
                                                       id="item-empty-error"></span>
                                             </div>
@@ -385,22 +396,26 @@
                                         <div class="col-5">
                                             <div class="form-group">
                                                 <label>Item Name :</label>
-                                                <label for="txtItemDescription"></label><input class="form-control" disabled
-                                                                                               id="txtItemDescription" type="text">
+                                                <label for="txtItemDescription"></label><input class="form-control"
+                                                                                               disabled
+                                                                                               id="txtItemDescription"
+                                                                                               type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label class="">Price :</label>
-                                                <label for="txtItemPrice"></label><input class="form-control" disabled id="txtItemPrice" type="text">
+                                                <label for="txtItemPrice"></label><input class="form-control" disabled
+                                                                                         id="txtItemPrice" type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label class="">QtyOnH :</label>
-                                                <label for="txtQTYOnHand"></label><input class="form-control" disabled id="txtQTYOnHand" type="text">
+                                                <label for="txtQTYOnHand"></label><input class=" form-control" disabled
+                                                                                         id="txtQTYOnHand" type="text">
                                             </div>
                                         </div>
 
@@ -410,19 +425,22 @@
                                         <div class="col-12 mt-4">
                                             <div class="form-group">
                                                 <label>Order Quantity :</label>
-                                                <label for="txtQty"></label><input class="form-control" id="txtQty" min="1" type="number">
+                                                <label for="txtQty"></label><input class="searchFld form-control" id="txtQty"
+                                                                                   min="1" type="number">
                                                 <span class="control-error" id="order-qty-empty-error"></span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group text-right">
-                                        <button class="btn btn-success col-12 col-sm-auto mt-1"
+                                        <button class="btn btn-success col-12 col-sm-auto mt-1 btnBackGround"
                                                 id="btnAddToTable" type="button">
                                             Add Item
                                         </button>
 
-                                        <button type="button" class="btn btn-warning col-12 col-sm-auto mt-1" data-bs-toggle="modal" data-bs-target="#myModal">Order Details</button>
+                                        <button class="btn btn-warning col-12 col-sm-auto mt-1 btnBackGround" data-bs-target="#myModal"
+                                                data-bs-toggle="modal" type="button">Order Details
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -430,7 +448,7 @@
                     </div>
 
                     <!-- pay option set up -->
-                    <div class="col-lg-3 justify-content-center " style="padding: 0; width: 20rem">
+                    <div class="col-lg-3 justify-content-center formBackGround " style="padding: 0; width: 20rem">
                         <section class="content-box-2 p-1 ">
 
                             <div class="row m-0">
@@ -441,8 +459,11 @@
                                             <span class="" id="total-text">Total : </span>
                                         </div>
                                         <div class="col-12">
-                                            Rs/= <span id="total">00.0</span>
-<!--                                            <span id="total">00.0</span> Rs/=-->
+                                            <input class="searchFld form-control" disabled id="total"
+                                                   type="text">
+<!--                                            Rs/= <span id="total">00.0</span>-->
+<!--                                            ------------------------------------------------------------------------------------------>
+                                            <!--                                            <span id="total">00.0</span> Rs/=-->
                                         </div>
                                     </div>
                                 </div>
@@ -454,7 +475,7 @@
                                         </div>
                                         <div class="col-12">
                                             Rs/= <span id="subtotal">00.0</span>
-<!--                                            <span id="subtotal">00.0</span> Rs/=-->
+                                            <!--                                            <span id="subtotal">00.0</span> Rs/=-->
                                         </div>
                                     </div>
                                 </div>
@@ -462,7 +483,8 @@
                                 <div class="col-6 mt-2">
                                     <div class="form-group">
                                         <label>Cash</label>
-                                        <label for="txtCash"></label><input class="form-control" id="txtCash" min="0" type="number">
+                                        <label for="txtCash"></label><input class="searchFld form-control" id="txtCash" min="0"
+                                                                            type="number">
                                         <span class="control-error" id="cash-empty-error"></span>
                                     </div>
                                 </div>
@@ -470,18 +492,20 @@
                                 <div class="col-6 mt-2">
                                     <div class="form-group">
                                         <label>Discount</label>
-                                        <label for="txtDiscount"></label><input class="form-control" id="txtDiscount" min="0" type="number">
+                                        <label for="txtDiscount"></label><input class="searchFld form-control" id="txtDiscount"
+                                                                                min="0" type="number">
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Balance</label>
-                                        <label for="txtBalance"></label><input class="form-control" id="txtBalance" type="text">
+                                        <label for="txtBalance"></label><input class="searchFld form-control" disabled id="txtBalance"
+                                                                               type="text">
                                     </div>
                                 </div>
-                                <div class="col-8">
-                                    <button class=" btn btn-danger mt-4" id="btnSubmitOrder" type="button">
+                                <div class="col-8 ">
+                                    <button class=" btn btn-danger mt-4 btnBackGround" id="btnSubmitOrder" type="button">
                                         Purchase
                                     </button>
                                 </div>
@@ -495,7 +519,7 @@
                             <!-- table container set up -->
                             <table class="table table-hover container-fluid">
                                 <!-- table heading -->
-                                <thead class="bg-dark text-white">
+                                <thead class="bg-dark text-white tableHead">
                                 <tr>
                                     <th>Item Code</th>
                                     <th>Item Name</th>
@@ -516,7 +540,7 @@
 
 
     <div class="container mt-5">
-<!--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</button>-->
+        <!--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</button>-->
 
         <div class="modal" id="myModal">
             <div class="modal-dialog modal-fullscreen">
@@ -526,10 +550,10 @@
                         <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
                                 type="button"></button>
                     </div>
-                    <div class="modal-body"  style="margin-left: 1.5em">
+                    <div class="modal-body" style="margin-left: 1.5em">
                         <section class="row" style="width: 100%">
-                            <table class="table table-dark table-striped mt-0 container-fluid">
-                                <thead>
+                            <table class="table table-dark table-striped mt-0 container-fluid ">
+                                <thead class="tableHead">
                                 <tr>
                                     <th scope="col">Order Id</th>
                                     <th scope="col">Order Date</th>
@@ -546,10 +570,6 @@
                             </table>
                         </section>
                     </div>
-<!--                    <div class="modal-footer">-->
-<!--                        <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--                        <button type="submit" class="btn btn-danger">Cancel</button>-->
-<!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -559,17 +579,16 @@
 </main>
 
 <!-- introducing home page -->
-<section class="container-fluid" id="HomePage" style="display:none">
+<section class="container-fluid" id="HomePage">
 
-    <div class="has-bg-img ">
+    <div class="has-bg-img">
         <img alt="..."
              class="bg-img position-relative "
              src="assets/img/veg-biryani-veg-pulav-served-round-brass-bowl-selective-focus.jpg"
-             style="width: 100% ;height: 92vh ">
+             style="width: 100% ;height: 85vh ">
     </div>
 
 </section>
-
 
 
 <!-- JAVA SCRIPT -->
@@ -600,7 +619,9 @@
 
 <script src="controllers/orderDetails.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
