@@ -48,7 +48,7 @@ validator('#ItemNameTxt', /^[A-z]{2,10}$/,
 )
 
 /** validator for item Qty txt */
-validator('#itemQtyTxt', /^[1-9]{1,4}$/,
+validator('#itemQtyTxt', /^[0-9]{1,4}$/,
     "Your input can't be validated, 10 ",
     '#itemQtyTxtLbl', '#unitPriceTxt'
 )
@@ -56,7 +56,7 @@ validator('#itemQtyTxt', /^[1-9]{1,4}$/,
 /** validator for item unit price txt */
 validator('#unitPriceTxt', /^([0-9]{2,6}.[0-9]{1,2})$/,
     "Your input can't be validated, Ex - 120.99",
-    '#itemUnitPriceTxtLbl', '#itemIdTxt'
+    '#itemUnitPriceTxtLbl', '#ItemNameTxt'
 )
 
 /** save object in to the array */
@@ -80,6 +80,8 @@ function saveItem() {
     loadAllItems()
     itemIdAutoGenerator++;
     $('#itemIdTxt').val("I-0"+itemIdAutoGenerator);
+    loadAllItemToCombo();
+
 }
 
 /** save item */

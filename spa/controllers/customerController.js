@@ -34,7 +34,7 @@ $('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt').on('keydown', function 
     }
 })
 
-/** validator for customer id txt */
+/** validator for customer id txt ^(C-0)[0-9]{1,4}$ */
 validator(
     '#cusIdTxt', /^(C-0)[0-9]{1,4}$/,
     "Your input can't be validated, Ex - C-001",
@@ -59,7 +59,7 @@ validator(
 validator(
     '#cusContactTxt', /^(07([1245678])|091)(-)[0-9]{7}$/,
     "Your input can't be validated, Ex - 0719028827",
-    '#CustomerContactLbl', '#cusIdTxt'
+    '#CustomerContactLbl', '#cusNameTxt'
 )
 
 /** save customer option */

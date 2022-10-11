@@ -8,28 +8,41 @@
 
 $("#Home").on('click',function () {
     $("#HomePage").show();
-    $("#itemForm").hide();
     $("#customerForm").hide();
+    $("#itemForm").hide();
     $("#orderForm").hide();
+    $("#orderDetailsForm").hide();
 });
 
 $("#Customer").on('click',function () {
     $("#HomePage").hide();
-    $("#itemForm").hide();
     $("#customerForm").show();
+    $("#itemForm").hide();
     $("#orderForm").hide();
+    $("#orderDetailsForm").hide();
 });
 
 $("#Item").on('click',function () {
     $("#HomePage").hide();
-    $("#itemForm").show();
     $("#customerForm").hide();
+    $("#itemForm").show();
     $("#orderForm").hide();
+    $("#orderDetailsForm").hide();
 });
 
 $("#Order").on('click',function () {
     $("#HomePage").hide();
+    $("#customerForm").hide();
+    $("#itemForm").hide();
+    $("#orderForm").show();
+    $("#orderDetailsForm").hide();
+
+});
+
+$("#orderDetails").on('click',function () {
+    $("#HomePage").hide();
     $("#itemForm").hide();
     $("#customerForm").hide();
-    $("#orderForm").show();
+    $("#orderForm").hide();
+    $("#orderDetailsForm").show();
 });

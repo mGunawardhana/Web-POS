@@ -12,3 +12,6 @@ let itemDetails = [];
 
 /** array for storing order details */
 let orderDetails = [];
+
+/** array for storing order details */
+let purchaseDetails = [];
