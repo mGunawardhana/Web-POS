@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="icon" href="assets/img/favicon.png">
     <link href="bootstraps/css/bootstrap.min.css" rel="stylesheet">
     <link crossorigin="anonymous" href="bootstraps/css/bootstrap.min.css"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet">
@@ -471,10 +472,12 @@
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-12 mt-3">
-                                            <span id="total-text1">SubTotal : </span>
+                                            <span id="total-text1">Discounted Price : </span>
                                         </div>
                                         <div class="col-12">
-                                            Rs/= <span id="subtotal">00.0</span>
+                                            <input class="searchFld form-control" disabled id="subtotal"
+                                                   type="text">
+<!--                                            Rs/= <span id="subtotal">00.0</span>-->
                                             <!--                                            <span id="subtotal">00.0</span> Rs/=-->
                                         </div>
                                     </div>
@@ -505,10 +508,14 @@
                                     </div>
                                 </div>
                                 <div class="col-8 ">
-                                    <button class=" btn btn-danger mt-4 btnBackGround" id="btnSubmitOrder" type="button">
+                                    <button class="btn btn-success purchaceBtn mt-4 btnBackGround" id="btnSubmitOrder" type="button">
                                         Purchase
                                     </button>
+                                    <button class=" btn btn-danger mt-4 btnBackGround" id="btnClear" type="button">
+                                        Clear
+                                    </button>
                                 </div>
+
                             </div>
                         </section>
                     </div>
