@@ -4,6 +4,7 @@
  *  * what's app - 071 - 733 1792
  */
 
+
 /** array for storing customer details */
 let customerDetails = [];
 

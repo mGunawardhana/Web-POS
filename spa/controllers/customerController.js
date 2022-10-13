@@ -66,15 +66,16 @@ validator(
 function saveCustomer() {
 
     /** packing customer details into customerObject */
-    let customerObject = {
-        id: $('#cusIdTxt').val(),
-        name: $('#cusNameTxt').val(),
-        address: $('#cusAddressTxt').val(),
-        contact: $('#cusContactTxt').val()
-    }
+
+    let customer = new Customer(
+            $('#cusIdTxt').val(),
+            $('#cusNameTxt').val(),
+            $('#cusAddressTxt').val(),
+            $('#cusContactTxt').val()
+    );
 
     /** customerObject adding into customerDetails object holding Array */
-    customerDetails.push(customerObject);
+    customerDetails.push(customer);
 
     clearTextField('#cusNameTxt,#cusAddressTxt,#cusContactTxt,#cusIdTxt');
 
