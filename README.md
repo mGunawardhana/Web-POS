@@ -63,6 +63,8 @@
 
 ![repo size](https://img.shields.io/github/repo-size/mGunawardhana/Web-POS?style=for-the-badge) &nbsp;
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/mGunawardhana/Web-POS?style=for-the-badge) &nbsp;
+![GitHub](https://img.shields.io/github/license/mGunawardhana/Web-POS?style=for-the-badge) &nbsp;
+![GitHub Watchers](https://img.shields.io/github/watchers/mGunawardhana/Web-POS?style=for-the-badge) &nbsp;
 
 </div>
 
