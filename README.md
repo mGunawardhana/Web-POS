@@ -2,6 +2,16 @@
 
 <br>
 
+| NAME | LINK |
+| ------ | ------ |
+| Wire-frame URL | https://wireframe.cc/ceiHxg |
+| Mock-up URL (Adobe XD) | https://xd.adobe.com/view/fc796200-21ae-4c59-88a2-816b7e33bc7b-a92a/ |
+| GitHub Page URL | https://mgunawardhana.github.io/My-Portfoliyo/assignments/css/frameworks/pos/index.html |
+
+</div>
+
+<br>
+
 ## ʜᴏᴍᴇ ᴘᴀɢᴇ
 
 ![Screenshot (1340)](https://user-images.githubusercontent.com/100486080/194364669-6f741d4b-ba0d-446c-b0a7-7efb62f6568a.jpg)
