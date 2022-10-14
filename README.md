@@ -6,7 +6,7 @@
 | ------ | ------ |
 | Wire-frame URL | https://wireframe.cc/ceiHxg |
 | Mock-up URL (Adobe XD) | https://xd.adobe.com/view/fc796200-21ae-4c59-88a2-816b7e33bc7b-a92a/ |
-| GitHub Page URL | https://mgunawardhana.github.io/My-Portfoliyo/assignments/css/frameworks/pos/index.html |
+| GitHub Page URL | https://mgunawardhana.github.io/My-Portfoliyo/assignments/js/spa/index.html |
 
 </div>
 
