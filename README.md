@@ -12,6 +12,8 @@
 
 <br>
 
+![Screenshot (1357)](https://user-images.githubusercontent.com/100486080/196507204-44f21259-283b-49e0-a740-cba65008bfcb.png)
+
 ## ʜᴏᴍᴇ ᴘᴀɢᴇ
 
 ![Screenshot (1340)](https://user-images.githubusercontent.com/100486080/194364669-6f741d4b-ba0d-446c-b0a7-7efb62f6568a.jpg)
