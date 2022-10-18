@@ -9,13 +9,3 @@ class OrderDetails {
         this.discount = discount;
     }
 }
-
-// OrderDetails ={
-//     oID:"",
-//     date:"",
-//     cID:"",
-//     iCode:"",
-//     oQty:"",
-//     Tot:"",
-//     discount:""
-// }

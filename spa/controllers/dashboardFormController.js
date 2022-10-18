@@ -6,43 +6,51 @@
  *
  */
 
-$("#Home").on('click',function () {
+/** default options */
+$("#itemForm,#header,#HomePage").hide();
+
+/** initializing user name */
+const userName = 'maneesha';
+
+/** initializing password */
+const pwd = 'maneesha27367';
+
+/** user name and password checker */
+$('#loginBtn').on('click', function () {
+    if (userName === $('#usernameTxt').val()) {
+        if (pwd === $('#passwordTxt').val()) {
+            $('#loginPage').hide();
+            $("#header,#HomePage").show();
+        }
+    }
+});
+
+/** click event for Home button */
+$("#Home").on('click', function () {
+    $("#customerForm,#itemForm,#orderForm,#orderDetailsForm").hide();
     $("#HomePage").show();
-    $("#customerForm").hide();
-    $("#itemForm").hide();
-    $("#orderForm").hide();
-    $("#orderDetailsForm").hide();
 });
 
-$("#Customer").on('click',function () {
-    $("#HomePage").hide();
+/** click event for Customer button */
+$("#Customer").on('click', function () {
+    $("#HomePage,#itemForm,#orderForm,#orderDetailsForm").hide();
     $("#customerForm").show();
-    $("#itemForm").hide();
-    $("#orderForm").hide();
-    $("#orderDetailsForm").hide();
 });
 
-$("#Item").on('click',function () {
-    $("#HomePage").hide();
-    $("#customerForm").hide();
+/** click event for Item button */
+$("#Item").on('click', function () {
+    $("#HomePage,#customerForm,#orderForm,#orderDetailsForm").hide();
     $("#itemForm").show();
-    $("#orderForm").hide();
-    $("#orderDetailsForm").hide();
 });
 
-$("#Order").on('click',function () {
-    $("#HomePage").hide();
-    $("#customerForm").hide();
-    $("#itemForm").hide();
+/** click event for Order button */
+$("#Order").on('click', function () {
+    $("#HomePage,#customerForm,#itemForm,#orderDetailsForm").hide();
     $("#orderForm").show();
-    $("#orderDetailsForm").hide();
-
 });
 
-$("#orderDetails").on('click',function () {
-    $("#HomePage").hide();
-    $("#itemForm").hide();
-    $("#customerForm").hide();
-    $("#orderForm").hide();
+/** click event for Order Details button */
+$("#orderDetails").on('click', function () {
+    $("#HomePage,#itemForm,#customerForm,#orderForm").hide();
     $("#orderDetailsForm").show();
 });

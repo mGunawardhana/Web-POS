@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="icon" href="assets/img/favicon.png">
+    <link href="assets/img/favicon.png" rel="icon">
     <link href="bootstraps/css/bootstrap.min.css" rel="stylesheet">
     <link crossorigin="anonymous" href="bootstraps/css/bootstrap.min.css"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet">
@@ -22,8 +22,42 @@
 </head>
 <body>
 
+<div class="container pt-3 tada" id="loginPage">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5 pt-5">
+            <div class="login-form mt-5 p-4 mt-5 pt-5 loginPageBox" style="background-color: rgba(51,48,48,0.26)">
+                <form action="" method="" class="row g-3">
+                    <h4>mGunawardhana POS</h4>
+                    <div class="col-12">
+                        <label>Username</label>
+                        <input type="text" id="usernameTxt" name="username" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="col-12">
+                        <label>Password</label>
+                        <input type="password" id="passwordTxt" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe"> Remember me</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" id="loginBtn" class="btn btn-success float-end">Login</button>
+                    </div>
+                </form>
+                <hr class="mt-4">
+                <div class="col-12">
+                    <p class="text-center mb-0">Have not account yet? <a href="#">Signup</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- header section set up -->
-<header>
+<header id="header">
 
     <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
 
@@ -63,10 +97,10 @@
         </div>
     </nav>
 
-</header>
+</header >
 
 <!-- introducing item form -->
-<section class="container-fluid" id="itemForm" style="display: none">
+<section class="container-fluid" id="itemForm" >
 
     <section class="row mt-0  justify-content-around" style="margin-right: 0; margin-left: 0">
         <div class="col-12 col-md-5 mt-5">
@@ -96,7 +130,7 @@
                         type="button">Add Item
                 </button>
                 <!-- update button -->
-                <button class="btn btnBackGround m-lg-2"  id="updateItemBtn"
+                <button class="btn btnBackGround m-lg-2" id="updateItemBtn"
                         style="background-color: #eccc68; color: black;font-weight: bold;"
                         type="button">Update Item
                 </button>
@@ -361,7 +395,7 @@
                         </div>
                     </div>
 
-<!--                  MARGIN 20 TBBA KELA UNOT AYN KARAPAN   -->
+                    <!--                  MARGIN 20 TBBA KELA UNOT AYN KARAPAN   -->
                     <div class="col-lg-4 mt-lg-0 mt-3" style="padding: 0; margin-right: 40px">
                         <div class="card formBackGround" style="background-color:#ffffff ">
                             <!-- item selector set up -->
@@ -420,13 +454,16 @@
                                             </div>
                                         </div>
 
-                                        <hr class="mt-4">
+                                        <hr class="mt-2">
                                         <hr>
 
+
                                         <div class="col-12 mt-4">
+
                                             <div class="form-group">
                                                 <label>Order Quantity :</label>
-                                                <label for="txtQty"></label><input class="searchFld form-control" id="txtQty"
+                                                <label for="txtQty"></label><input class="searchFld form-control"
+                                                                                   id="txtQty"
                                                                                    min="1" type="number">
                                                 <span class="control-error" id="order-qty-empty-error"></span>
                                             </div>
@@ -439,7 +476,8 @@
                                             Add Item
                                         </button>
 
-                                        <button class="btn btn-warning col-12 col-sm-auto mt-1 btnBackGround" data-bs-target="#myModal"
+                                        <button class="btn btn-warning col-12 col-sm-auto mt-1 btnBackGround"
+                                                data-bs-target="#myModal"
                                                 data-bs-toggle="modal" type="button">Order Details
                                         </button>
                                     </div>
@@ -462,8 +500,8 @@
                                         <div class="col-12">
                                             <input class="searchFld form-control" disabled id="total"
                                                    type="text">
-<!--                                            Rs/= <span id="total">00.0</span>-->
-<!--                                            ------------------------------------------------------------------------------------------>
+                                            <!--                                            Rs/= <span id="total">00.0</span>-->
+                                            <!--                                            ------------------------------------------------------------------------------------------>
                                             <!--                                            <span id="total">00.0</span> Rs/=-->
                                         </div>
                                     </div>
@@ -477,7 +515,7 @@
                                         <div class="col-12">
                                             <input class="searchFld form-control" disabled id="subtotal"
                                                    type="text">
-<!--                                            Rs/= <span id="subtotal">00.0</span>-->
+                                            <!--                                            Rs/= <span id="subtotal">00.0</span>-->
                                             <!--                                            <span id="subtotal">00.0</span> Rs/=-->
                                         </div>
                                     </div>
@@ -486,7 +524,8 @@
                                 <div class="col-6 mt-2">
                                     <div class="form-group">
                                         <label>Cash</label>
-                                        <label for="txtCash"></label><input class="searchFld form-control" id="txtCash" min="0"
+                                        <label for="txtCash"></label><input class="searchFld form-control" id="txtCash"
+                                                                            min="0"
                                                                             type="number">
                                         <span class="control-error" id="cash-empty-error"></span>
                                     </div>
@@ -495,7 +534,8 @@
                                 <div class="col-6 mt-2">
                                     <div class="form-group">
                                         <label>Discount</label>
-                                        <label for="txtDiscount"></label><input class="searchFld form-control" id="txtDiscount"
+                                        <label for="txtDiscount"></label><input class="searchFld form-control"
+                                                                                id="txtDiscount"
                                                                                 min="0" type="number">
                                     </div>
                                 </div>
@@ -503,15 +543,17 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Balance</label>
-                                        <label for="txtBalance"></label><input class="searchFld form-control" disabled id="txtBalance"
+                                        <label for="txtBalance"></label><input class="searchFld form-control" disabled
+                                                                               id="txtBalance"
                                                                                type="text">
                                     </div>
                                 </div>
                                 <div class="col-8 ">
-                                    <button class="btn btn-success purchaceBtn mt-4 btnBackGround" id="btnSubmitOrder" type="button">
+                                    <button class="btn btn-danger purchaceBtn mt-4 btnBackGround" id="btnSubmitOrder"
+                                            type="button">
                                         Purchase
                                     </button>
-                                    <button class=" btn btn-danger mt-4 btnBackGround" id="btnClear" type="button">
+                                    <button class=" btn btn-warning mt-4 btnBackGround" id="btnClear" type="button">
                                         Clear
                                     </button>
                                 </div>
@@ -591,9 +633,13 @@
     <div class="has-bg-img">
         <img alt="..."
              class="bg-img position-relative "
-             src="assets/img/veg-biryani-veg-pulav-served-round-brass-bowl-selective-focus.jpg"
+             src=""
              style="width: 100% ;height: 85vh ">
     </div>
+
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+
+    </section>
 
 </section>
 
@@ -633,11 +679,13 @@
 
 <script src="model/Order.js"></script>
 
+<script src="model/OrderDetails.js"></script>
 
 
 <script crossorigin="anonymous"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
 </html>

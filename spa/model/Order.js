@@ -8,12 +8,3 @@ class Order {
         this.orderId = orderId;
     }
 }
-
-// let Order ={
-//     iCode:"",
-//     itemName:"",
-//     price:"",
-//     Qty:"",
-//     total:"",
-//     orderId:""
-// }

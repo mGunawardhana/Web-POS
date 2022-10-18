@@ -7,7 +7,7 @@ class Item {
     }
 }
 
-// let customer = {
+// let Item = {
 //     itemCode: "",
 //     itemName: "",
 //     qty: "",
