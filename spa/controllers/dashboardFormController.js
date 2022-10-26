@@ -17,12 +17,12 @@ const pwd = 'maneesha27367';
 
 /** user name and password checker */
 $('#loginBtn').on('click', function () {
-    if (userName === $('#usernameTxt').val()) {
-        if (pwd === $('#passwordTxt').val()) {
+    // if (userName === $('#usernameTxt').val()) {
+    //     if (pwd === $('#passwordTxt').val()) {
             $('#loginPage').hide();
             $("#header,#HomePage").show();
-        }
-    }
+    //     }
+    // }
 });
 
 /** click event for Home button */
@@ -54,3 +54,27 @@ $("#orderDetails").on('click', function () {
     $("#HomePage,#itemForm,#customerForm,#orderForm").hide();
     $("#orderDetailsForm").show();
 });
+
+
+/** button moving */
+
+//
+// $('#passwordTxt').on('keydown',function (e){
+//
+//     if (pwd === $('#passwordTxt').val()) {
+//
+//
+//
+//     } else {
+//
+//         let btn = document.querySelector(".btnFunny");
+//         let position;
+//         btn.addEventListener('mouseover', function () {
+//             position ? (position = 0) : (position = 200);
+//             btn.style.transform = `translate(${position}px,0px)`;
+//             btn.style.transition = "all 0.3s ease";
+//         });
+//
+//     }
+// })
+//

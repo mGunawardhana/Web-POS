@@ -6,10 +6,3 @@ class Item {
         this.unitPrice = unitPrice;
     }
 }
-
-// let Item = {
-//     itemCode: "",
-//     itemName: "",
-//     qty: "",
-//     unitPrice: ""
-// }

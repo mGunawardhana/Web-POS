@@ -16,34 +16,33 @@
     <link href="bootstraps/css/bootstrap.min.css" rel="stylesheet">
     <link crossorigin="anonymous" href="bootstraps/css/bootstrap.min.css"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet">
-
     <link href="assets/style.css" rel="stylesheet">
 
 </head>
 <body>
 
-<div class="container pt-3 tada" id="loginPage">
-    <div class="row">
-        <div class="col-md-4 offset-md-4 mt-5 pt-5">
-            <div class="login-form mt-5 p-4 mt-5 pt-5 loginPageBox" style="background-color: rgba(51,48,48,0.26)">
-                <form action="" method="" class="row g-3">
-                    <h4>mGunawardhana POS</h4>
-                    <div class="col-12">
+<div class="container pt-3 tada " id="loginPage" style="border-radius: 8px;">
+    <div class="row pb-5 backGround-Image-Home " >
+        <div class="col-md-6 offset-md-3 mt-5 pt-5" style="border-radius: 8px">
+            <div class="login-form mt-5 p-4 mt-5 pt-5 loginPageBox bgColour rotate-center" >
+                <form action="" method="#" class="row g-3">
+                    <h4 style="font-family: 'Pacifico', cursive;font-weight: bolder;">mGunawardhana POS</h4>
+                    <div class="col-12 col-lg-6 col-xxl-6 ">
                         <label>Username</label>
                         <input type="text" id="usernameTxt" name="username" class="form-control" placeholder="Username">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-lg-6 col-xxl-6 ">
                         <label>Password</label>
                         <input type="password" id="passwordTxt" name="password" class="form-control" placeholder="Password">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-lg-6 col-xxl-6 ">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="rememberMe">
                             <label class="form-check-label" for="rememberMe"> Remember me</label>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button type="button" id="loginBtn" class="btn btn-success float-end">Login</button>
+                    <div class="col-12 col-lg-6 col-xxl-6 ">
+                        <button type="button" id="loginBtn" class="btn btn-success btnFunny">Login</button>
                     </div>
                 </form>
                 <hr class="mt-4">
@@ -52,7 +51,49 @@
                 </div>
             </div>
         </div>
+
     </div>
+
+<!--&lt;!&ndash;    adding image slider&ndash;&gt;-->
+<!--    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">-->
+<!--        <div class="carousel-indicators">-->
+<!--            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--        </div>-->
+<!--        <div class="carousel-inner">-->
+<!--            <div class="carousel-item active">-->
+<!--                <img src="assets/img/food-facebook-cover-17.jpg" class="d-block w-100" alt="...">-->
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h5>First slide label</h5>-->
+<!--                    <p>Some representative placeholder content for the first slide.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="carousel-item">-->
+<!--                <img src="assets/img/Food-Facebook-Cover-Banner-19.jpg" class="d-block w-100" alt="...">-->
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h5>Second slide label</h5>-->
+<!--                    <p>Some representative placeholder content for the second slide.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="carousel-item">-->
+<!--                <img src="assets/img/Food-Facebook-Cover-Banner-20.jpg" class="d-block w-100" alt="...">-->
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h5>Third slide label</h5>-->
+<!--                    <p>Some representative placeholder content for the third slide.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">-->
+<!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Previous</span>-->
+<!--        </button>-->
+<!--        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">-->
+<!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Next</span>-->
+<!--        </button>-->
+<!--    </div>-->
+
 </div>
 
 
@@ -630,16 +671,45 @@
 <!-- introducing home page -->
 <section class="container-fluid" id="HomePage">
 
-    <div class="has-bg-img">
-        <img alt="..."
-             class="bg-img position-relative "
-             src=""
-             style="width: 100% ;height: 85vh ">
+    <!--    adding image slider-->
+    <div id="carouselExampleDark" class="carousel carousel-dark mt-auto slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner tv-option">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="assets/img/food-facebook-cover-17.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="assets/img/Food-Facebook-Cover-Banner-19.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Crustaceans, Echinoderms</h5>
+                    <p style="color: white">Buy any 2 delicious plates and win buddy plate.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/Food-Facebook-Cover-Banner-20.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
-    <section class="h-100 gradient-form" style="background-color: #eee;">
-
-    </section>
 
 </section>
 
