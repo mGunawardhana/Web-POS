@@ -12,11 +12,11 @@
 
 <br>
 
-![Screenshot (1357)](https://user-images.githubusercontent.com/100486080/196507204-44f21259-283b-49e0-a740-cba65008bfcb.png)
+![Screenshot (1388)](https://user-images.githubusercontent.com/100486080/197949280-de58079c-589e-42ed-aa6b-f00bfbe2a1dd.png)
 
 ## ʜᴏᴍᴇ ᴘᴀɢᴇ
 
-![Screenshot (1340)](https://user-images.githubusercontent.com/100486080/194364669-6f741d4b-ba0d-446c-b0a7-7efb62f6568a.jpg)
+![Screenshot (1389)](https://user-images.githubusercontent.com/100486080/197949286-b21bcf9d-7fbb-42e9-8381-7540bfe0fa28.png)
 
 ## ɪᴛᴇᴍ ꜰᴏʀᴍ   
 
