@@ -18,3 +18,4 @@ function loadAllPurchaseDetails() {
         $('#itemDetailsTblBody').append(purchaseRow);
     }
 }
+

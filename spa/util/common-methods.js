@@ -6,7 +6,6 @@
 
 /** The purpose of using this script file is to minimize repetitive code. */
 
-
 /** SWEAT ALERTS */
 
 /** sweat alert for saved successfully */
@@ -74,7 +73,6 @@ function search(id, arrayReferenceName) {
 
 /** delete any object in arraylist */
 function deleteObj(textField, arrayRefNameForDelete) {
-
     /**
      * How to use this method ?
      *     ----------------------------------------------------------------------------------------->
@@ -96,6 +94,7 @@ function deleteObj(textField, arrayRefNameForDelete) {
         /** this two method remove and implement one use ful method */
         loadAllItems();
         loadAllCustomer();
+        loadAllOderDetails();
         return true;
     } else {
         return false;

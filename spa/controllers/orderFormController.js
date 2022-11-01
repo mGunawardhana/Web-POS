@@ -36,7 +36,6 @@ function loadAllCustomersToCombo() {
     }
 }
 
-
 /** combo operation on oder id */
 $('#orderCustomerID').on('click', function () {
     let customerID = $('#orderCustomerID').val();
@@ -82,7 +81,6 @@ $('#btnAddToTable').on('click', function () {
 
     let tot = a * b;
 
-
     let orderArray = new Order(
         $("#selectItemCode").val(),
         $("#txtItemDescription").val(),
@@ -119,7 +117,6 @@ $('#btnAddToTable').on('click', function () {
             $('#orderTblBody').empty();
         }
     }
-
 
     if (bool === false) {
         orderDetails.push(orderArray);
@@ -162,7 +159,6 @@ $('#btnAddToTable').on('click', function () {
     loadAllPurchaseDetails();
 
 });
-
 
 let fullTot = 0;
 let fullAmount = 0;
@@ -209,12 +205,11 @@ $('#btnSubmitOrder').on('click', function () {
     let oAmount = parseInt(orderAmount);
 
 
-
     $('#total').val("Rs/= " + (oAmount - discountedPrice));
 
     let customCash = parseInt($('#txtCash').val());//1000
 
-    let subTotal = ((orderAmount/100) * disCount);//500 - 50
+    let subTotal = ((orderAmount / 100) * disCount);//500 - 50
     $('#subtotal').val(subTotal) // 450
 
     let s = customCash;//1000
@@ -244,6 +239,13 @@ $('#btnSubmitOrder').on('click', function () {
 
     orderAmount = 0;
 
+});
+//
+$('#removeFromCart').on('click', function () {
+    //TODO this is search field id -  searchToRemoveFromCart
+    alert($('#searchToRemoveFromCart').val());
+    deleteObj('#searchToRemoveFromCart', orderDetails);
+    loadAllOderDetails();
 });
 
 /* option for button clear */
