@@ -57,27 +57,27 @@ $("#orderDetails").on('click', function () {
 
 
 // /** button moving */
-// $('#passwordTxt').on('keypress', function (e) {
-    // let btn = document.querySelector(".btnFunny");
-    // let position;
+$('#passwordTxt').on('keypress', function (e) {
+    let btn = document.querySelector(".btnFunny");
+    let position;
 
-//     if ((pwd != $('#passwordTxt').val()) && (userName === $('#usernameTxt').val()) ) {
-//
-//         // btn.addEventListener('mouseover', function () {
-//         //     position ? (position = 0) : (position = 200);
-//         //     btn.style.transform = `translate(${position}px,0px)`;
-//         //     btn.style.transition = "all 0.3s ease";
-//         // });
-//
-//     } else {
-//         //
-//         // btn.preventDefault();
-//         // btn.removeEventListener('mouseover',function (){
-//         //     position ? (position = 0) : (position = 200);
-//         //     btn.style.transform = `translate(${position}px,0px)`;
-//         //     btn.style.transition = "all 0.3s ease";
-//         // });
-//         return false;
-//     }
-// });
+    if ((pwd != $('#passwordTxt').val()) && (userName === $('#usernameTxt').val()) ) {
+
+        // btn.addEventListener('mouseover', function () {
+        //     position ? (position = 0) : (position = 200);
+        //     btn.style.transform = `translate(${position}px,0px)`;
+        //     btn.style.transition = "all 0.3s ease";
+        // });
+
+    } else {
+        //
+        // btn.preventDefault();
+        // btn.removeEventListener('mouseover',function (){
+        //     position ? (position = 0) : (position = 200);
+        //     btn.style.transform = `translate(${position}px,0px)`;
+        //     btn.style.transition = "all 0.3s ease";
+        // });
+        // return false;
+    }
+});
 //
